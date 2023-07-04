@@ -1,6 +1,4 @@
 <?php
-session_start();
-
 require 'pdo-connection.php';
     
 try {
