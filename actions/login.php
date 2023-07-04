@@ -12,7 +12,7 @@ function verifyUsernameAndLogin(string $username)
     require 'pdo-connection.php';
     
     try {
-        $prepareUser = $pdoChat->prepare("SELECT * FROM users WHERE username = :username");
+        $prepareUser = $pdoQuizz->prepare("SELECT * FROM users WHERE username = :username");
         $prepareUser->execute([':username' => $username]);
         $fetchedUser = $prepareUser->fetch();
     } catch (PDOException $exception) {
@@ -35,7 +35,7 @@ function addUserAndFetchUserInfos($username)
     require 'pdo-connection.php';
     
     try {
-        $prepareUser = $pdoChat->prepare("INSERT INTO users (username) VALUES (:username)");
+        $prepareUser = $pdoQuizz->prepare("INSERT INTO users (username) VALUES (:username)");
         $prepareUser->execute([':username' => $username]);
     } catch (PDOException $exception) {
         $_SESSION['lastErrMsg'] = $exception->getMessage();
@@ -44,7 +44,7 @@ function addUserAndFetchUserInfos($username)
     }
     
     try {
-        $prepareUser = $pdoChat->prepare("SELECT * FROM users WHERE username = :username");
+        $prepareUser = $pdoQuizz->prepare("SELECT * FROM users WHERE username = :username");
         $prepareUser->execute([':username' => $username]);
         $fetchedUser = $prepareUser->fetch();
     } catch (PDOException $exception) {
