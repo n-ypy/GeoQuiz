@@ -22,7 +22,7 @@ if(isset($_SESSION['lastErrMsg'])){
         <form action="actions/login.php" method="POST">
             <label for="username">Entre ton prénom :</label>
             <input type="text" name="username" class="form-control" placeholder="Prénom" aria-label="Entre ton prénom :" required>
-            <button type="submit" class="btn btn-primary mt-3">Play!</button>
+            <button type="submit" class="btn mt-3">Play!</button>
         </form>
     </div>
 </body>
