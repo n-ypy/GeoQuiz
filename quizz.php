@@ -1,3 +1,9 @@
+<?php
+session_start();
+if(isset($_SESSION['lastErrMsg'])){
+    echo $_SESSION['lastErrMsg'];
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
