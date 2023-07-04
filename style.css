@@ -1,8 +1,7 @@
 body {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-weight: bold;
-  color: #000000;
-  background-color: #fadc30;
+  background-color: #a5fd39;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -20,39 +19,36 @@ body {
   text-align: center;
 }
 
-h4 {
-  font-size: 36px;
-  color: #faba30;
-  margin-top: 0;
-  margin-bottom: 20px;
+.header {
+  color: #fff;
 }
 
-form {
+.question-title {
   display: flex;
-  flex-direction: column;
   align-items: center;
 }
 
-label {
+.question-title h3 {
+  font-size: 24px;
+  color: #a5fd39;
+  margin-right: 5px;
+}
+
+.question-title h5 {
   font-size: 18px;
-  margin-bottom: 10px;
+  margin: 0;
 }
 
-.form-control {
-  width: 300px;
-  height: 40px;
-  font-size: 16px;
-  padding: 5px 10px;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
+.reponses {
+  margin-top: 10px;
 }
 
-button[type="submit"] {
-  width: 150px;
+.reponses button {
+  width: 100%;
   height: 40px;
-  font-size: 16px;
-  background-color: #ffce63;
+  font-size: 18px;
+  background-color: #fadc30;
+  font-weight: bold;
   color: #fd394f;
   border: none;
   border-radius: 5px;
@@ -60,57 +56,51 @@ button[type="submit"] {
   transition: background-color 0.3s ease;
 }
 
-button[type="submit"]:hover {
-  background-color: #fd394f;
-  color: #ffce63;
+.reponses button:hover {
+  background-color: #ffffff;
+  color: #fd394f;
 }
 
-label.radio {
+.buttons {
+  margin-top: 20px;
+}
+
+.buttons button {
+  width: 250px;
+  height: 40px;
+  font-weight: bold;
+  font-size: 16px;
+  background-color: #a5fd39;
+  color: #4f4f4f;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-label.radio input {
-  position: absolute;
-  top: 0; 
-  left: 0;
-  visibility: hidden;
-  pointer-events: none;
+.buttons button:hover {
+  background-color: #ed001c;
+  color: #ffffff;
 }
 
-.header {
-  color: #fff;
-}
+@media (max-width: 768px) {
+  .container {
+    margin: 10px;
+  }
 
-.btn {
-  border: 3px solid #ffce63;
-  background-color: #fd394f;
-  color: #ffce63;
-}
+  .question-title h3 {
+    font-size: 20px;
+  }
 
-label.radio span {
-  padding: 4px 0px;
-  border: 1px solid #f82838;
-  display: inline-block;
-  color: #f82838;
-  width: 100px;
-  text-align: center;
-  border-radius: 3px;
-  margin-top: 7px;
-  text-transform: uppercase;
-}
+  .question-title h5 {
+    font-size: 16px;
+  }
 
-label.radio input:checked + span {
-  border-color: #f82838;
-  background-color: #fd394f;
-  color: #fff;
-}
+  .reponses button {
+    font-size: 14px;
+  }
 
-.ans {
-  margin-left: 0.5rem;
-}
-
-.btn:focus,
-.btn:active {
-  outline: 0 !important;
-  box-shadow: none !important;
+  .buttons button {
+    font-size: 14px;
+  }
 }
