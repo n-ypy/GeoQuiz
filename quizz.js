@@ -12,10 +12,12 @@ async function getQuestions() {
 
 getQuestions()
     .then(questions => {
+        for(i=0; i<20; i++){
+            let questionNumber = document.querySelector("")
+        }
         
         console.log(questions);
     })
-    .catch(error => {
-        
+    .catch(error => {   
         console.error(error);
     });
