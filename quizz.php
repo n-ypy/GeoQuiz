@@ -1,9 +1,18 @@
+<?php
+session_start();
+if(isset($_SESSION['lastErrMsg'])){
+    echo $_SESSION['lastErrMsg'];
+}
+?>
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
     <title>GéoQuiz</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="container mt-5">
         <div class="d-flex justify-content-center row">
