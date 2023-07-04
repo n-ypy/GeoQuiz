@@ -13,7 +13,7 @@ if(isset($_SESSION['lastErrMsg'])){
     <title>Home</title>
 </head>
 <body>
-    <form action="actions/login.php" method="POST">
+    <form action="actions/login.php" method="POST" hidden>
         <label for="username">Enter your username :</label>
         <input type="text" name="username" required>
         <button type="submit">Play!</button>
