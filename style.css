@@ -1,5 +1,68 @@
-body{
-    background-color:#eee;
+body {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: bold;
+  color: #000000;
+  background-color: #fadc30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  background-color: #f82838;
+  color: #fff;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+h4 {
+  font-size: 36px;
+  color: #faba30;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.form-control {
+  width: 300px;
+  height: 40px;
+  font-size: 16px;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button[type="submit"] {
+  width: 150px;
+  height: 40px;
+  font-size: 16px;
+  background-color: #ffce63;
+  color: #fd394f;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #fd394f;
+  color: #ffce63;
 }
 
 label.radio {
@@ -14,11 +77,21 @@ label.radio input {
   pointer-events: none;
 }
 
+.header {
+  color: #fff;
+}
+
+.btn {
+  border: 3px solid #ffce63;
+  background-color: #fd394f;
+  color: #ffce63;
+}
+
 label.radio span {
   padding: 4px 0px;
-  border: 1px solid red;
+  border: 1px solid #f82838;
   display: inline-block;
-  color: red;
+  color: #f82838;
   width: 100px;
   text-align: center;
   border-radius: 3px;
@@ -27,20 +100,16 @@ label.radio span {
 }
 
 label.radio input:checked + span {
-  border-color: red;
-  background-color: red;
+  border-color: #f82838;
+  background-color: #fd394f;
   color: #fff;
 }
 
 .ans {
-  margin-left: 36px !important;
+  margin-left: 0.5rem;
 }
 
-.btn:focus {
-  outline: 0 !important;
-  box-shadow: none !important;
-}
-
+.btn:focus,
 .btn:active {
   outline: 0 !important;
   box-shadow: none !important;
