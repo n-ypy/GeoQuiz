@@ -1,11 +1,12 @@
 <?php
 session_start();
-if(isset($_SESSION['lastErrMsg'])){
+if (isset($_SESSION['lastErrMsg'])) {
     echo $_SESSION['lastErrMsg'];
 }
 ?>
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
@@ -15,55 +16,52 @@ if(isset($_SESSION['lastErrMsg'])){
 
 <body>
     <div class="container mt-5">
-        <div class="d-flex justify-content-center row">
+        <div class="row">
             <div class="col-md-10 col-lg-10">
-                <div class="question p-3">
-                    <div class="header d-flex flex-row justify-content-between align-items-center">
-                        <h4>TP Quiz</h4>
-                        <span>(5 of 20)</span>
+                <div class="question">
+                    <div class="header">
+                        <h1>GéoQuiz !</h1>
+                        <span>(1 of 20)</span>
                     </div>
                 </div>
-                <div class="question p-3">
-                    <div class="d-flex flex-row align-items-center question-title">
+                <div class="question">
+                    <div class="question-title">
                         <h3 class="text-danger">Q. </h3>
-                        <h5 class="mt-1 ml-2">Quel est le plus grand pays du monde en termes de superficie ?</h5>
+                        <h5>Quel est le plus grand pays du monde en termes de superficie ?</h5>
                     </div>
-                    <div class="reponses ml-2 d-flex justify-content-center">
+                    <div class="reponses">
                         <label class="radio">
-                            <input type="radio" name="brazil" value="brazil">
+                            <input type="radio" name="reponse" value="Canada">
                             <span>Canada</span>
                         </label>
                     </div>
-
-                    <div class="reponses ml-2 d-flex justify-content-center">
+                    <div class="reponses">
                         <label class="radio">
-                            <input type="radio" name="Germany" value="Germany">
+                            <input type="radio" name="reponse" value="Russie">
                             <span>Russie</span>
                         </label>
                     </div>
-                    <div class="reponses ml-2 d-flex justify-content-center">
+                    <div class="reponses">
                         <label class="radio">
-                            <input type="radio" name="Indonesia" value="Indonesia">
+                            <input type="radio" name="reponse" value="États-Unis">
                             <span>États-Unis</span>
                         </label>
                     </div>
-                    <div class="reponses ml-2 d-flex justify-content-center">
+                    <div class="reponses">
                         <label class="radio">
-                            <input type="radio" name="Russia" value="Russia">
+                            <input type="radio" name="reponse" value="Chine">
                             <span>Chine</span>
                         </label>
                     </div>
                 </div>
-                <div class="d-flex flex-row justify-content-between align-items-center p-3">
-                    <button class="btn d-flex align-items-center" type="button">
-                        <i class="fa fa-angle-left mt-1 mr-1"></i>&nbsp;previous
-                    </button>
+                <div class="buttons">
                     <button class="btn" type="button">
-                        Next<i class="fa fa-angle-right ml-2"></i>
+                        Valider la réponse
                     </button>
                 </div>
             </div>
         </div>
     </div>
 </body>
+
 </html>
