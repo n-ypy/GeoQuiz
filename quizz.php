@@ -21,44 +21,46 @@ if (isset($_SESSION['lastErrMsg'])) {
                 <div class="question">
                     <div class="header">
                         <h1>GéoQuiz !</h1>
-                        <span>(1 of 20)</span>
+                        <span id="questionNumber">(1 of 20)</span> <!--attention à id="questionNumber"-->
                     </div>
                 </div>
-                <div class="question">
-                    <div class="question-title">
-                        <h3 class="text-danger">Q. </h3>
-                        <h5>Quel est le plus grand pays du monde en termes de superficie ?</h5>
+                <form action="" type="POST">
+                    <div class="question">
+                        <div class="question-title">
+                            <h3 class="text-danger">Q. </h3>
+                             <h5 id="enunciate">Quel est le plus grand pays du monde en termes de superficie ?</h5> <!--attention à id="enunciate"-->
+                        </div>
+                        <div class="reponses">
+                            <label class="radio">
+                                <input type="radio" name="reponse" value="Canada">
+                                <span id="responseOne">Canada</span> <!--attention à id="responseOne"-->
+                            </label>
+                        </div>
+                        <div class="reponses">
+                            <label class="radio">
+                                <input type="radio" name="reponse" value="Russie">
+                                <span id="responseTwo">Russie</span> <!--attention à id="responseTwo"-->
+                            </label>
+                        </div>
+                        <div class="reponses">
+                            <label class="radio">
+                                <input type="radio" name="reponse" value="États-Unis">
+                                <span id="responseThree">États-Unis</span> <!--attention à id="responseThree"-->
+                            </label>
+                        </div>
+                        <div class="reponses">
+                            <label class="radio">
+                                <input type="radio" name="reponse" value="Chine">
+                                <span id="responseFour">Chine</span> <!--attention à id="responseFour"-->
+                            </label>
+                        </div>
+                        <div class="buttons">
+                            <button class="btn" type="submit">
+                                Valider la réponse
+                            </button>
+                        </div>
                     </div>
-                    <div class="reponses">
-                        <label class="radio">
-                            <input type="radio" name="reponse" value="Canada">
-                            <span>Canada</span>
-                        </label>
-                    </div>
-                    <div class="reponses">
-                        <label class="radio">
-                            <input type="radio" name="reponse" value="Russie">
-                            <span>Russie</span>
-                        </label>
-                    </div>
-                    <div class="reponses">
-                        <label class="radio">
-                            <input type="radio" name="reponse" value="États-Unis">
-                            <span>États-Unis</span>
-                        </label>
-                    </div>
-                    <div class="reponses">
-                        <label class="radio">
-                            <input type="radio" name="reponse" value="Chine">
-                            <span>Chine</span>
-                        </label>
-                    </div>
-                </div>
-                <div class="buttons">
-                    <button class="btn" type="button">
-                        Valider la réponse
-                    </button>
-                </div>
+                </form>
             </div>
         </div>
     </div>
