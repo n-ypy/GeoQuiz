@@ -1,3 +1,7 @@
+let data = {
+    key: 1,
+};
+
 
 async function getQuestions() {
     const response = await fetch("actions/get-questions.php", {
@@ -5,14 +9,14 @@ async function getQuestions() {
         headers: {
             "Content-type": "application/json",
         },
-        body: JSON.stringify(getRandomInt(5)),
+        body: JSON.stringify(data),
     });
     return response.json();
 }
 
 getQuestions()
     .then((questions) => {
-        let i = 0;
+        let i = 1;
         let questionNumber = document.querySelector("#questionNumber");
         let enunciate = document.querySelector("#enunciate");
         let responseOne = document.querySelector("#responseOne");
@@ -20,20 +24,30 @@ getQuestions()
         let responseThree = document.querySelector("#responseThree");
         let responseFour = document.querySelector("#responseFour");
         let submitButton = document.querySelector(".btn");
+        let answeredQuestions = [];
+
+
 
         function submitResponse(questions) {
             let getRandomEnunciate = getRandomInt(4);
-            questionNumber.innerHTML = `(${i} of 20)`;
-            enunciate.innerHTML = `${questions[getRandomEnunciate]['enunciate']}`;
-            responseOne.innerHTML = `${questions[getRandomEnunciate]['option1']}`;
-            responseTwo.innerHTML = `${questions[getRandomEnunciate]['option2']}`;
-            responseThree.innerHTML = `${questions[getRandomEnunciate]['option3']}`;
-            responseFour.innerHTML = `${questions[getRandomEnunciate]['option4']}`;
+            if (!answeredQuestions.includes(`${getRandomEnunciate}`)) {
+                questionNumber.innerHTML = `(${i} of 30)`;
+                enunciate.innerHTML = `${questions[getRandomEnunciate]['enunciate']}`;
+                responseOne.innerHTML = `${questions[getRandomEnunciate]['option1']}`;
+                responseTwo.innerHTML = `${questions[getRandomEnunciate]['option2']}`;
+                responseThree.innerHTML = `${questions[getRandomEnunciate]['option3']}`;
+                responseFour.innerHTML = `${questions[getRandomEnunciate]['option4']}`;
+                answeredQuestions.push(`${getRandomEnunciate}`)
+            } else {
+                submitResponse(questions);
+            }
         }
-
+        submitResponse(questions)
         submitButton.addEventListener("click", (event) => {
-            submitResponse(questions), 
-            i++
+            if (i <= 30) {
+                submitResponse(questions)
+                i++
+            }
             event.preventDefault()
         })
 
