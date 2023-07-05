@@ -29,7 +29,8 @@ getQuestions()
 
 
         function submitResponse(questions) {
-            let getRandomEnunciate = getRandomInt(4);
+
+            let getRandomEnunciate = getRandomInt(30);
             if (!answeredQuestions.includes(`${getRandomEnunciate}`)) {
                 questionNumber.innerHTML = `(${i} of 30)`;
                 enunciate.innerHTML = `${questions[getRandomEnunciate]['enunciate']}`;
