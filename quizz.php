@@ -65,5 +65,5 @@ if (isset($_SESSION['lastErrMsg'])) {
         </div>
     </div>
 </body>
-
+<script src="quizz.js"></script>
 </html>
