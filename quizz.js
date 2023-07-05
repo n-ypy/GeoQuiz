@@ -30,14 +30,22 @@ getQuestions()
 
         function submitResponse(questions) {
 
-            let getRandomEnunciate = getRandomInt(30);
+            let getRandomEnunciate = getRandomInt((31));
             if (!answeredQuestions.includes(`${getRandomEnunciate}`)) {
                 questionNumber.innerHTML = `(${i} of 30)`;
                 enunciate.innerHTML = `${questions[getRandomEnunciate]['enunciate']}`;
-                responseOne.innerHTML = `${questions[getRandomEnunciate]['option1']}`;
-                responseTwo.innerHTML = `${questions[getRandomEnunciate]['option2']}`;
-                responseThree.innerHTML = `${questions[getRandomEnunciate]['option3']}`;
-                responseFour.innerHTML = `${questions[getRandomEnunciate]['option4']}`;
+                responseOne.innerHTML = `
+                <input type="radio" name="reponse" value="${questions[getRandomEnunciate]['option1']}">
+                <span>${questions[getRandomEnunciate]['option1']}</span>`;
+                responseTwo.innerHTML = `
+                <input type="radio" name="reponse" value="${questions[getRandomEnunciate]['option2']}">
+                <span>${questions[getRandomEnunciate]['option2']}</span>`;
+                responseThree.innerHTML = `
+                <input type="radio" name="reponse" value="${questions[getRandomEnunciate]['option3']}">
+                <span>${questions[getRandomEnunciate]['option3']}</span>`;
+                responseFour.innerHTML = `
+                <input type="radio" name="reponse" value="${questions[getRandomEnunciate]['option4']}">
+                <span>${questions[getRandomEnunciate]['option4']}</span>`;
                 answeredQuestions.push(`${getRandomEnunciate}`)
             } else {
                 submitResponse(questions);
