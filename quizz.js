@@ -22,8 +22,8 @@ getQuestions()
         let submitButton = document.querySelector(".btn");
 
         function submitResponse(questions) {
-            let getRandomEnunciate = getRandomInt(4);
-            questionNumber.innerHTML = `(${i} of 20)`;
+            let getRandomEnunciate = getRandomInt(30);
+            questionNumber.innerHTML = `(${i} sur 30)`;
             enunciate.innerHTML = `${questions[getRandomEnunciate]['enunciate']}`;
             responseOne.innerHTML = `${questions[getRandomEnunciate]['option1']}`;
             responseTwo.innerHTML = `${questions[getRandomEnunciate]['option2']}`;
