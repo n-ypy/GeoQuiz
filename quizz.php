@@ -21,40 +21,40 @@ if (isset($_SESSION['lastErrMsg'])) {
                 <div class="question">
                     <div class="header">
                         <h1>GéoQuiz !</h1>
-                        <span id="questionNumber">(1 sur 30)</span> <!--attention à id="questionNumber"-->
+                        <span id="questionNumber"></span> <!--attention à id="questionNumber"-->
                     </div>
                 </div>
                 <form action="" type="POST">
                     <div class="question">
                         <div class="question-title">
                             <h3 class="text-danger">Q. <br></h3>
-                             <h5 id="enunciate"></h5> <!--attention à id="enunciate"-->
+                            <h5 id="enunciate"></h5> <!--attention à id="enunciate"-->
                         </div>
                         <div class="reponses">
-                            <label class="radio">
+                            <label class="radio" id="responseOne">
                                 <input type="radio" name="reponse" value="Canada">
-                                <span id="responseOne"></span> <!--attention à id="responseOne"-->
+                                <span></span> <!--attention à id="responseOne"-->
                             </label>
                         </div>
                         <br>
                         <div class="reponses">
-                            <label class="radio">
+                            <label class="radio" id="responseTwo">
                                 <input type="radio" name="reponse" value="Russie">
-                                <span id="responseTwo"></span> <!--attention à id="responseTwo"-->
+                                <span></span> <!--attention à id="responseTwo"-->
                             </label>
                         </div>
                         <br>
                         <div class="reponses">
-                            <label class="radio">
+                            <label class="radio" id="responseThree">
                                 <input type="radio" name="reponse" value="États-Unis">
-                                <span id="responseThree"></span> <!--attention à id="responseThree"-->
+                                <span></span> <!--attention à id="responseThree"-->
                             </label>
                         </div>
                         <br>
                         <div class="reponses">
-                            <label class="radio">
+                            <label class="radio" id="responseFour">
                                 <input type="radio" name="reponse" value="Chine">
-                                <span id="responseFour"></span> <!--attention à id="responseFour"-->
+                                <span></span> <!--attention à id="responseFour"-->
                             </label>
                         </div>
                         <div class="buttons">
@@ -69,4 +69,5 @@ if (isset($_SESSION['lastErrMsg'])) {
     </div>
 </body>
 <script src="quizz.js"></script>
+
 </html>
