@@ -19,8 +19,9 @@ function getQuestions($key = false)
     return $fetchedQuestions;
 }
 
+// $key = isset($_POST['your_key']);
+$key = true;
 
-$key = isset($_POST['your_key']);
 
 $fetchedQuestions = getQuestions($key);
 echo json_encode($fetchedQuestions, JSON_FORCE_OBJECT);
