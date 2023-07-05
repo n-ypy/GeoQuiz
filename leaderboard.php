@@ -1,10 +1,3 @@
-<?php
-session_start();
-if(isset($_SESSION['lastErrMsg'])){
-    echo $_SESSION['lastErrMsg'];
-}
-?>
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -12,106 +5,66 @@ if(isset($_SESSION['lastErrMsg'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leaderboard</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-
-        .leaderboard {
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .leaderboard-header {
-            background-color: #ff5e6c;
-            color: #fff;
-            padding: 20px;
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
-        }
-
-        .leaderboard-title {
-            font-size: 24px;
-            margin: 0;
-        }
-
-        .leaderboard-list {
-            color: #f82838;
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .leaderboard-item {
-            display: flex;
-            align-items: center;
-            padding: 15px;
-            border-bottom: 1px solid #f0f0f0;
-        }
-
-        .leaderboard-item:last-child {
-            border-bottom: none;
-        }
-
-        .leaderboard-rank {
-            font-size: 20px;
-            font-weight: bold;
-            color: #ff5e6c;
-            width: 40px;
-            text-align: center;
-        }
-
-        .leaderboard-avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            margin-right: 15px;
-        }
-
-        .leaderboard-username {
-            font-size: 16px;
-            font-weight: bold;
-            margin: 0;
-        }
-
-        .leaderboard-score {
-            font-size: 18px;
-            margin: 0;
-        }
-    </style>
+    <!-- Vos autres styles et liens -->
 </head>
 <body>
+    <!-- Votre contenu HTML -->
+
     <div class="container">
         <div class="leaderboard">
             <div class="leaderboard-header">
                 <h2 class="leaderboard-title">Classement</h2>
             </div>
-            <ul class="leaderboard-list">
-                <li class="leaderboard-item">
-                    <div class="leaderboard-rank">1</div>
-                    <img class="leaderboard-avatar" src="avatar1.jpg" alt="Avatar">
-                    <div>
-                        <h3 class="leaderboard-username">John Doe</h3>
-                        <p class="leaderboard-score">Score: 1000</p>
-                    </div>
-                </li>
-                <li class="leaderboard-item">
-                    <div class="leaderboard-rank">2</div>
-                    <img class="leaderboard-avatar" src="avatar2.jpg" alt="Avatar">
-                    <div>
-                        <h3 class="leaderboard-username">Jane Smith</h3>
-                        <p class="leaderboard-score">Score: 950</p>
-                    </div>
-                </li>
-                <li class="leaderboard-item">
-                    <div class="leaderboard-rank">3</div>
-                    <img class="leaderboard-avatar" src="avatar3.jpg" alt="Avatar">
-                    <div>
-                        <h3 class="leaderboard-username">Mike Johnson</h3>
-                        <p class="leaderboard-score">Score: 900</p>
-                    </div>
-                </li>
-                <!-- Ajoutez d'autres éléments de leaderboard ici -->
+            <ul id="leaderboard-list" class="leaderboard-list">
+                <!-- Les données du leaderboard seront ajoutées ici dynamiquement -->
             </ul>
         </div>
     </div>
+
+    <!-- Vos autres balises HTML -->
+
+    <script>
+        // Utilisation d'AJAX pour récupérer les données du fichier get-bestscore.php
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'actions/get-bestscore.php', true);
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                var leaderboardData = JSON.parse(xhr.responseText);
+                var leaderboardList = document.getElementById('leaderboard-list');
+
+                // Parcourir les données et ajouter des éléments au leaderboard
+                leaderboardData.forEach(function(user) {
+                    var listItem = document.createElement('li');
+                    listItem.className = 'leaderboard-item';
+
+                    var rankDiv = document.createElement('div');
+                    rankDiv.className = 'leaderboard-rank';
+                    rankDiv.textContent = user.rank;
+                    listItem.appendChild(rankDiv);
+
+                    var avatarImg = document.createElement('img');
+                    avatarImg.className = 'leaderboard-avatar';
+                    avatarImg.src = user.avatar;
+                    avatarImg.alt = 'Avatar';
+                    listItem.appendChild(avatarImg);
+
+                    var userDetailsDiv = document.createElement('div');
+                    var usernameHeading = document.createElement('h3');
+                    usernameHeading.className = 'leaderboard-username';
+                    usernameHeading.textContent = user.username;
+                    userDetailsDiv.appendChild(usernameHeading);
+
+                    var scoreParagraph = document.createElement('p');
+                    scoreParagraph.className = 'leaderboard-score';
+                    scoreParagraph.textContent = 'Score: ' + user.best_score;
+                    userDetailsDiv.appendChild(scoreParagraph);
+
+                    listItem.appendChild(userDetailsDiv);
+                    leaderboardList.appendChild(listItem);
+                });
+            }
+        };
+        xhr.send();
+    </script>
 </body>
 </html>

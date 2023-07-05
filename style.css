@@ -2,16 +2,15 @@ body {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-weight: bold;
   background-color: #a5fd39;
-  background-image: ;
+  background-image: linear-gradient(rgba(0, 255, 68, 0.65), rgba(255, 255, 0, 0.49)), url('img/image.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
   margin: 0;
   padding: 0;
-  background-image: url('/img/image.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 .container {
@@ -47,23 +46,39 @@ body {
   margin-top: 10px;
 }
 
-.reponses button {
-  width: 100%;
-  height: 40px;
-  font-size: 18px;
-  background-color: #fadc30;
-  font-weight: bold;
-  color: #fd394f;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+.reponses {
+  display: inline-block;
 }
 
-.reponses button:hover {
-  background-color: #ffffff;
-  color: #fd394f;
+.reponses label {
+  display: inline-block;
+  margin-right: 10px;
+  padding: 6px 12px;
+  background-color: #fadc30;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
 }
+
+.reponses label:hover {
+  background-color: #a5fd39;
+  color:#fff;
+}
+
+.reponses input[type="radio"] {
+  display: none;
+}
+
+.reponses input[type="radio"]:checked + span {
+  background-color: #f82838;
+  color: #ffffff;
+}
+
+.reponses input[type="radio"]:checked + span:hover {
+  background-color: #a5fd39;
+}
+
 
 .buttons {
   margin-top: 20px;
@@ -75,7 +90,7 @@ body {
   font-weight: bold;
   font-size: 16px;
   background-color: #a5fd39;
-  color: #4f4f4f;
+  color: #1f1f1f;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -84,7 +99,7 @@ body {
 
 .buttons button:hover, .btn:hover {
   background-color: #fadc30;
-  color: #1f1f1f;
+  color: #ffffff;
 }
 
 @media (max-width: 768px) {
