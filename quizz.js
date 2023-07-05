@@ -53,11 +53,15 @@ getQuestions()
         }
         submitResponse(questions)
         submitButton.addEventListener("click", (event) => {
+            const form = event.target.closest("form");
+            const formData = new FormData(form);
+            console.log(formData)
             if (i <= 30) {
                 submitResponse(questions)
                 i++
             }
             event.preventDefault()
+            
         })
 
         console.log(questions);
