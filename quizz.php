@@ -21,37 +21,40 @@ if (isset($_SESSION['lastErrMsg'])) {
                 <div class="question">
                     <div class="header">
                         <h1>GéoQuiz !</h1>
-                        <span id="questionNumber">(1 of 20)</span> <!--attention à id="questionNumber"-->
+                        <span id="questionNumber">(1 sur 30)</span> <!--attention à id="questionNumber"-->
                     </div>
                 </div>
                 <form action="" type="POST">
                     <div class="question">
                         <div class="question-title">
-                            <h3 class="text-danger">Q. </h3>
-                             <h5 id="enunciate">Quel est le plus grand pays du monde en termes de superficie ?</h5> <!--attention à id="enunciate"-->
+                            <h3 class="text-danger">Q. <br></h3>
+                             <h5 id="enunciate"></h5> <!--attention à id="enunciate"-->
                         </div>
                         <div class="reponses">
                             <label class="radio">
                                 <input type="radio" name="reponse" value="Canada">
-                                <span id="responseOne">Canada</span> <!--attention à id="responseOne"-->
+                                <span id="responseOne"></span> <!--attention à id="responseOne"-->
                             </label>
                         </div>
+                        <br>
                         <div class="reponses">
                             <label class="radio">
                                 <input type="radio" name="reponse" value="Russie">
-                                <span id="responseTwo">Russie</span> <!--attention à id="responseTwo"-->
+                                <span id="responseTwo"></span> <!--attention à id="responseTwo"-->
                             </label>
                         </div>
+                        <br>
                         <div class="reponses">
                             <label class="radio">
                                 <input type="radio" name="reponse" value="États-Unis">
-                                <span id="responseThree">États-Unis</span> <!--attention à id="responseThree"-->
+                                <span id="responseThree"></span> <!--attention à id="responseThree"-->
                             </label>
                         </div>
+                        <br>
                         <div class="reponses">
                             <label class="radio">
                                 <input type="radio" name="reponse" value="Chine">
-                                <span id="responseFour">Chine</span> <!--attention à id="responseFour"-->
+                                <span id="responseFour"></span> <!--attention à id="responseFour"-->
                             </label>
                         </div>
                         <div class="buttons">

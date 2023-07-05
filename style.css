@@ -1,10 +1,22 @@
+@keyframes color {
+	0%   { background: #a5fd3975; }
+	20%  { background: #00ffae75; }
+	40%  { background: #fadc3075; }
+	60%  { background: #00ffae75; }
+	80%  { background: #fadc3075; }
+	100% { background: #a5fd3975; }
+}
+
 body {
+  background: #a5fd3982; /* Fallback */
+  animation: color 5s infinite linear;
+  text-align: center;
+  padding: 2em;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-weight: bold;
-  background-color: #a5fd39;
-  background-image: linear-gradient(rgba(0, 255, 68, 0.65), rgba(255, 255, 0, 0.49)), url('img/image.jpg');
+  /* background-image: linear-gradient(rgba(0, 255, 68, 0.65), rgba(255, 255, 0, 0.49)), url('img/image.jpg');
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -50,8 +62,9 @@ body {
 }
 
 .reponses label {
-  display: inline-block;
-  margin-right: 10px;
+  display: block;
+  margin-bottom: 10px;
+  width: 200px;
   padding: 6px 12px;
   background-color: #a5fd39;
   color: #333;
@@ -83,7 +96,7 @@ body {
 }
 
 .buttons button, .btn {
-  width: 250px;
+  width: 200px;
   height: 40px;
   font-weight: bold;
   font-size: 16px;
