@@ -15,15 +15,14 @@ body {
 
 .container {
   background-color: #f82838;
+  border: #fadc30 3px solid;
+  box-shadow: 0 2px 8px #559a00;
+  max-width: 450px;
   color: #fff;
   padding: 20px;
   margin: 20px;
   border-radius: 10px;
   text-align: center;
-}
-
-.header {
-  color: #fff;
 }
 
 .question-title {
@@ -54,7 +53,7 @@ body {
   display: inline-block;
   margin-right: 10px;
   padding: 6px 12px;
-  background-color: #fadc30;
+  background-color: #a5fd39;
   color: #333;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -62,8 +61,8 @@ body {
 }
 
 .reponses label:hover {
-  background-color: #a5fd39;
-  color:#fff;
+  background-color: #fadc30;
+  color:#f82838;
 }
 
 .reponses input[type="radio"] {
@@ -79,7 +78,6 @@ body {
   background-color: #a5fd39;
 }
 
-
 .buttons {
   margin-top: 20px;
 }
@@ -89,7 +87,7 @@ body {
   height: 40px;
   font-weight: bold;
   font-size: 16px;
-  background-color: #a5fd39;
+  background-color: #fadc30;
   color: #1f1f1f;
   border: none;
   border-radius: 5px;
@@ -98,8 +96,8 @@ body {
 }
 
 .buttons button:hover, .btn:hover {
-  background-color: #fadc30;
-  color: #ffffff;
+  background-color: #a5fd39;
+  color: #f82838;
 }
 
 @media (max-width: 768px) {
@@ -108,7 +106,7 @@ body {
   }
 
   .question-title h3 {
-    font-size: 20px;
+   font-size: 32px;
   }
 
   .question-title h5 {
