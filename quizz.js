@@ -21,7 +21,7 @@ async function submitScore(data) {
         headers: {
             "Content-type": "application/json",
         },
-        body: `{score: ${data}}`
+        body: JSON.stringify({ score: data }),
     });
     return response.json();
 }
@@ -160,8 +160,8 @@ getQuestions(data).then((questions) => {
                 <input type="radio" name="response" value="${questions[lastQuestion]['option4']}" disabled>
                 <span>${questions[lastQuestion]['option4']}</span>`;
             }
-        } else if (i > 60) {
-            submitScore(score)
+        } else if (i >= 60) {
+            submitScore(score);
         }
         i++;
         console.log(event.target.innerHTML);
