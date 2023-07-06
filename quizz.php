@@ -32,28 +32,28 @@ if (isset($_SESSION['lastErrMsg'])) {
                         </div>
                         <div class="reponses">
                             <label class="radio" id="responseOne">
-                                <input type="radio" name="reponse" value="Canada">
+                                <input type="radio" name="reponse" value="">
                                 <span></span> <!--attention à id="responseOne"-->
                             </label>
                         </div>
                         <br>
                         <div class="reponses">
                             <label class="radio" id="responseTwo">
-                                <input type="radio" name="reponse" value="Russie">
+                                <input type="radio" name="reponse" value="">
                                 <span></span> <!--attention à id="responseTwo"-->
                             </label>
                         </div>
                         <br>
                         <div class="reponses">
                             <label class="radio" id="responseThree">
-                                <input type="radio" name="reponse" value="États-Unis">
+                                <input type="radio" name="reponse" value="">
                                 <span></span> <!--attention à id="responseThree"-->
                             </label>
                         </div>
                         <br>
                         <div class="reponses">
                             <label class="radio" id="responseFour">
-                                <input type="radio" name="reponse" value="Chine">
+                                <input type="radio" name="reponse" value="">
                                 <span></span> <!--attention à id="responseFour"-->
                             </label>
                         </div>
