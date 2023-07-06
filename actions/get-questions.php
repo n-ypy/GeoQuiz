@@ -1,5 +1,7 @@
 <?php
 
+$data = json_decode(file_get_contents('php://input'), true);
+
 function getQuestions($key = false)
 {
     if ($key) {
@@ -19,9 +21,8 @@ function getQuestions($key = false)
     return $fetchedQuestions;
 }
 
-// $key = isset($_POST['your_key']);
-$key = true;
+$key = isset($data['key']);
 
 
 $fetchedQuestions = getQuestions($key);
-echo json_encode($fetchedQuestions, JSON_FORCE_OBJECT);
+echo json_encode($fetchedQuestions);
