@@ -1,70 +1,86 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leaderboard</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Vos autres styles et liens -->
-</head>
-<body>
-    <!-- Votre contenu HTML -->
+    <style>
+        .container {
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-    <div class="container">
-        <div class="leaderboard">
-            <div class="leaderboard-header">
-                <h2 class="leaderboard-title">Classement</h2>
-            </div>
-            <ul id="leaderboard-list" class="leaderboard-list">
-                <!-- Les données du leaderboard seront ajoutées ici dynamiquement -->
-            </ul>
+        .leaderboard-title {
+            color: #FFFFFF;
+            text-transform: uppercase;
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .leaderboard-item {
+            background-color: #ffffff95;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border: #a5fd39 2px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .username {
+            color: #ff0015;
+            font-weight: bold;
+            padding: 10px;
+            text-transform: uppercase;
+        }
+
+        .score {
+            color: #555555;
+            font-weight: bold;
+        }
+
+        .score-bar {
+            width: 100%;
+            height: 10px;
+            background-color: #15c400;
+            margin-top: 10px;
+            position: relative;
+        }
+
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <div class="leaderboard">
+        <div class="leaderboard-header">
+            <h2 class="leaderboard-title">Classement</h2>
+        </div>
+        <div id="leaderboard-content" class="leaderboard-content">
+            <?php
+            require 'actions/get-bestscore.php';
+
+            foreach ($fetchedUser as $user) {
+                echo '<div class="leaderboard-item">';
+                echo '<div class="player-info">';
+                echo '<span class="username">' . htmlspecialchars($user['username']) . '</span>';
+                echo '<span class="score">Best Score: ' . htmlspecialchars($user['best_score']) . '</span>';
+                echo '</div>';
+                echo '<div class="score-bar" style="width: ' . ($user['best_score'] / 30 * 100) . '%"></div>';
+                echo '</div>';
+            }
+            ?>
         </div>
     </div>
+</div>
 
-    <!-- Vos autres balises HTML -->
-
-    <script>
-        // Utilisation d'AJAX pour récupérer les données du fichier get-bestscore.php
-        var xhr = new XMLHttpRequest();
-        xhr.open('GET', 'actions/get-bestscore.php', true);
-        xhr.onload = function() {
-            if (xhr.status === 200) {
-                var leaderboardData = JSON.parse(xhr.responseText);
-                var leaderboardList = document.getElementById('leaderboard-list');
-
-                // Parcourir les données et ajouter des éléments au leaderboard
-                leaderboardData.forEach(function(user) {
-                    var listItem = document.createElement('li');
-                    listItem.className = 'leaderboard-item';
-
-                    var rankDiv = document.createElement('div');
-                    rankDiv.className = 'leaderboard-rank';
-                    rankDiv.textContent = user.rank;
-                    listItem.appendChild(rankDiv);
-
-                    var avatarImg = document.createElement('img');
-                    avatarImg.className = 'leaderboard-avatar';
-                    avatarImg.src = user.avatar;
-                    avatarImg.alt = 'Avatar';
-                    listItem.appendChild(avatarImg);
-
-                    var userDetailsDiv = document.createElement('div');
-                    var usernameHeading = document.createElement('h3');
-                    usernameHeading.className = 'leaderboard-username';
-                    usernameHeading.textContent = user.username;
-                    userDetailsDiv.appendChild(usernameHeading);
-
-                    var scoreParagraph = document.createElement('p');
-                    scoreParagraph.className = 'leaderboard-score';
-                    scoreParagraph.textContent = 'Score: ' + user.best_score;
-                    userDetailsDiv.appendChild(scoreParagraph);
-
-                    listItem.appendChild(userDetailsDiv);
-                    leaderboardList.appendChild(listItem);
-                });
-            }
-        };
-        xhr.send();
-    </script>
 </body>
+
 </html>
