@@ -27,7 +27,6 @@ if (isset($_SESSION['lastErrMsg'])) {
                 <form action="" type="POST">
                     <div class="question">
                         <div class="question-title">
-                            <h3 class="text-danger">Q. <br></h3>
                             <h5 id="enunciate"></h5> <!--attention à id="enunciate"-->
                         </div>
                         <div class="reponses">
