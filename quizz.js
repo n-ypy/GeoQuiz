@@ -55,16 +55,16 @@ getQuestions()
                 questionNumber.innerHTML = `(${q} of 30)`;
                 enunciate.innerHTML = questions[getRandomEnunciate]["enunciate"];
                 responseOne.innerHTML = `
-                    <input type="radio" name="response" value="${questions[getRandomEnunciate]['option1']}">
+                    <input type="radio" name="response" value="${questions[getRandomEnunciate]['option1']}" required>
                     <span>${questions[getRandomEnunciate]['option1']}</span>`;
                 responseTwo.innerHTML = `
-                    <input type="radio" name="response" value="${questions[getRandomEnunciate]['option2']}">
+                    <input type="radio" name="response" value="${questions[getRandomEnunciate]['option2']}" required>
                     <span>${questions[getRandomEnunciate]['option2']}</span>`;
                 responseThree.innerHTML = `
-                    <input type="radio" name="response" value="${questions[getRandomEnunciate]['option3']}">
+                    <input type="radio" name="response" value="${questions[getRandomEnunciate]['option3']}"required>
                     <span>${questions[getRandomEnunciate]['option3']}</span>`;
                 responseFour.innerHTML = `
-                    <input type="radio" name="response" value="${questions[getRandomEnunciate]['option4']}">
+                    <input type="radio" name="response" value="${questions[getRandomEnunciate]['option4']}"required>
                     <span>${questions[getRandomEnunciate]['option4']}</span>`;
                 answeredQuestions.push(`${getRandomEnunciate}`);
                 lastQuestion = `${getRandomEnunciate}`;
