@@ -23,7 +23,7 @@
         }
 
         .leaderboard-item {
-            background-color: #ffffff95;
+            background-color: #ffffff90;
             padding: 10px;
             margin: 10px 0;
             border-radius: 4px;
@@ -57,31 +57,34 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="leaderboard">
-            <div class="leaderboard-header">
-                <h2 class="leaderboard-title">Classement</h2>
-            </div>
-            <div id="leaderboard-content" class="leaderboard-content">
-                <?php
-                require 'actions/get-bestscore.php';
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-10 col-lg-10">
+                <div class="leaderboard">
+                    <div class="leaderboard-header">
+                        <h2 class="leaderboard-title">Classement</h2>
+                    </div>
+                    <div id="leaderboard-content" class="leaderboard-content">
+                        <?php
+                        require 'actions/get-bestscore.php';
 
-                foreach ($fetchedUser as $user) {
-                    if ($user["best_score"] !== null) {
-                        echo '<div class="leaderboard-item">';
-                        echo '<div class="player-info">';
-                        echo '<span class="username">' . htmlspecialchars($user['username']) . '</span>';
-                        echo '<span class="score">Best Score: ' . htmlspecialchars($user['best_score']) . '</span>';
-                        echo '</div>';
-                        echo '<div class="score-bar" style="width: ' . ($user['best_score'] / 30 * 100) . '%"></div>';
-                        echo '</div>';
-                    }
-                }
-                ?>
+                        foreach ($fetchedUser as $user) {
+                            if ($user["best_score"] !==NULL) { echo '<div class="leaderboard-item">';
+                            echo '<div class="player-info">';
+                            echo '<span class="username">' . htmlspecialchars($user['username']) . '</span>';
+                            echo '<span class="score">Best Score: ' . htmlspecialchars($user['best_score']) . '</span>';
+                            echo '</div>';
+                            echo '<div class="score-bar" style="width: ' . ($user['best_score'] / 30 * 100) . '%"></div>';
+                            echo '</div>';
+                            }
+                        }
+                        ?>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-
+    </div>
 </body>
 
 </html>

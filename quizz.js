@@ -98,11 +98,11 @@ getQuestions(data).then((questions) => {
             ) {
                 responseOne.innerHTML = `
                 <input type="radio" name="response" value="${questions[lastQuestion]['option1']}" disabled>
-                <span>${questions[lastQuestion]['option1']} (Bonne réponse)</span>`;
+                <span><img src="img/true_lt.png" alt="Bonne réponse">  ${questions[lastQuestion]['option1']}</span>`;
             } else if (answer === questions[lastQuestion]["option1"]) {
                 responseOne.innerHTML = `
                 <input type="radio" name="response" value="${questions[lastQuestion]['option1']}" disabled>
-                <span>${questions[lastQuestion]['option1']} (Mauvaise réponse)</span>`;
+                <span><img src="img/false_lt.png" alt="Mauvaise réponse">  ${questions[lastQuestion]['option1']}</span>`;
             } else {
                 responseOne.innerHTML = `
                 <input type="radio" name="response" value="${questions[lastQuestion]['option1']}" disabled>
@@ -116,12 +116,12 @@ getQuestions(data).then((questions) => {
                 questions[lastQuestion]["response"] === questions[lastQuestion]["option2"]
             ) {
                 responseTwo.innerHTML = `
-                <input type="radio" name="response" value="${questions[lastQuestion]['option2']}" disabled>
-                <span>${questions[lastQuestion]['option2']} (Bonne réponse)</span>`;
+                <input type="radio" id="true" name="response" value="${questions[lastQuestion]['option2']}" disabled>
+                <span><img src="img/true_lt.png" alt="Bonne réponse">  ${questions[lastQuestion]['option2']}</span>`;
             } else if (answer === questions[lastQuestion]["option2"]) {
                 responseTwo.innerHTML = `
-                <input type="radio" name="response" value="${questions[lastQuestion]['option2']}" disabled>
-                <span>${questions[lastQuestion]['option2']} (Mauvaise réponse)</span>`;
+                <input type="radio" id="false" name="response" value="${questions[lastQuestion]['option2']}" disabled>
+                <span><img src="img/false_lt.png" alt="Mauvaise réponse">  ${questions[lastQuestion]['option2']}</span>`;
             } else {
                 responseTwo.innerHTML = `
                 <input type="radio" name="response" value="${questions[lastQuestion]['option2']}" disabled>
@@ -136,11 +136,11 @@ getQuestions(data).then((questions) => {
             ) {
                 responseThree.innerHTML = `
                 <input type="radio" name="response" value="${questions[lastQuestion]['option3']}" disabled>
-                <span>${questions[lastQuestion]['option3']} (Bonne réponse)</span>`;
+                <span><img src="img/true_lt.png" alt="Bonne réponse">  ${questions[lastQuestion]['option3']}</span>`;
             } else if (answer === questions[lastQuestion]["option3"]) {
                 responseThree.innerHTML = `
                 <input type="radio" name="response" value="${questions[lastQuestion]['option3']}" disabled>
-                <span>${questions[lastQuestion]['option3']} (Mauvaise réponse)</span>`;
+                <span><img src="img/false_lt.png" alt="Mauvaise réponse">  ${questions[lastQuestion]['option3']}</span>`;
             } else {
                 responseThree.innerHTML = `
                 <input type="radio" name="response" value="${questions[lastQuestion]['option3']}" disabled>
@@ -155,11 +155,11 @@ getQuestions(data).then((questions) => {
             ) {
                 responseFour.innerHTML = `
                 <input type="radio" name="response" value="${questions[lastQuestion]['option4']}" disabled>
-                <span>${questions[lastQuestion]['option4']} (Bonne réponse)</span>`;
+                <span><img src="img/true_lt.png" alt="Bonne réponse">  ${questions[lastQuestion]['option4']}</span>`;
             } else if (answer === questions[lastQuestion]["option4"]) {
                 responseFour.innerHTML = `
                 <input type="radio" name="response" value="${questions[lastQuestion]['option4']}" disabled>
-                <span>${questions[lastQuestion]['option4']} (Mauvaise réponse)</span>`;
+                <span><img src="img/false_lt.png" alt="Mauvaise réponse">  ${questions[lastQuestion]['option4']}</span>`;
             } else {
                 responseFour.innerHTML = `
                 <input type="radio" name="response" value="${questions[lastQuestion]['option4']}" disabled>
