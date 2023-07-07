@@ -21,7 +21,7 @@ if(isset($_SESSION['lastErrMsg'])){
         <h1>Bienvenue sur <b>GéoQuiz !</b></h1>
         <form action="actions/login.php" method="POST">
             <input type="text" name="username" class="form-control" placeholder="Prénom" aria-label="Entre ton prénom :" required>
-            <button type="submit" class="btn mt-3">Play!</button>
+            <button type="submit" class="btn mt-3">Jouer!</button>
         </form>
     </div>
 </body>
