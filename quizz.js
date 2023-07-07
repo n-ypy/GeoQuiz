@@ -45,19 +45,16 @@ getQuestions(data).then((questions) => {
 
     function timer() {
         selectTimer.innerHTML = time;
-        if(time > 0){
-        time--;
-    } else {
-        submitButton.click()
-        time = 10
+        if (time > 0) {
+            time--;
+        } else {
+            submitButton.click()
+            time = 10
+        }
     }
-    }
-    setInterval(timer, 1000);
+    const interval = setInterval(timer, 1000);
 
     function submitResponse(questions) {
-        
-
-
         let getRandomEnunciate = getRandomInt(31);
         if (!answeredQuestions.includes(`${getRandomEnunciate}`)) {
             questionNumber.innerHTML = `(${q} of 30)`;
@@ -84,6 +81,14 @@ getQuestions(data).then((questions) => {
     submitResponse(questions);
 
     submitButton.addEventListener("click", (event) => {
+
+        if (i < 60 && i % 2 === 0) {
+            interval = setInterval(timer, 1000);
+        } else {
+            clearInterval(interval)
+            time = 10;
+        }
+
         if (i < 60 && i % 2 === 0) {
             q++;
             event.target.innerHTML = "Valider la réponse";
@@ -94,7 +99,6 @@ getQuestions(data).then((questions) => {
             } else {
                 event.target.innerHTML = "Question suivante";
             }
-
             const form = event.target.closest("form");
             const formData = new FormData(form);
             console.log(formData.get("response"));
