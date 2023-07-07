@@ -46,7 +46,7 @@ getQuestions()
                 time = 10;
             }
         }
-
+        timer();
         let interval = setInterval(timer, 1000);
 
         function submitResponse(questions) {
