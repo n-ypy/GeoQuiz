@@ -50,3 +50,4 @@ function submitNewBestScore($score, bool $newBestScore = false, bool $userLogged
 }
 
 submitNewBestScore($score, $newBestScore, $userLoggedIn);
+echo json_encode("success", JSON_FORCE_OBJECT);
