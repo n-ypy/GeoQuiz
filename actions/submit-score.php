@@ -1,5 +1,6 @@
 <?php
 
+
 session_start();
 
 $data = json_decode(file_get_contents('php://input'), true);
@@ -44,8 +45,7 @@ function submitNewBestScore($score, bool $newBestScore = false, bool $userLogged
             header('Location: ../index.php?err=submitScoreFailed');
             exit();
         }
-    } else {
-        exit();
+        $_SESSION['best_score'] = $score;
     }
 }
 
