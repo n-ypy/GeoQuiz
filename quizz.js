@@ -72,7 +72,12 @@ getQuestions(data).then((questions) => {
             event.target.innerHTML = "Valider la réponse";
             submitResponse(questions);
         } else if (i < 60 && i % 2 === 1) {
-            event.target.innerHTML = "Question suivante";
+            if (i === 59) {
+                event.target.innerHTML = "Aller vers la leaderboard";
+            } else {
+                event.target.innerHTML = "Question suivante";
+            }
+
             const form = event.target.closest("form");
             const formData = new FormData(form);
             console.log(formData.get("response"));
@@ -160,8 +165,17 @@ getQuestions(data).then((questions) => {
                 <input type="radio" name="response" value="${questions[lastQuestion]['option4']}" disabled>
                 <span>${questions[lastQuestion]['option4']}</span>`;
             }
+
         } else if (i >= 60) {
-            submitScore(score);
+            submitScore(score)
+                .then((response) => {
+                    if (response) {
+                        window.location.href = "leaderboard.php"
+                    } else {
+                        throw new Error("Erreur envoie de données vers leaderboard")
+                    }
+                });
+
         }
         i++;
         console.log(event.target.innerHTML);

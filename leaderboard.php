@@ -53,33 +53,34 @@
             margin-top: 10px;
             position: relative;
         }
-
     </style>
 </head>
 
 <body>
-<div class="container">
-    <div class="leaderboard">
-        <div class="leaderboard-header">
-            <h2 class="leaderboard-title">Classement</h2>
-        </div>
-        <div id="leaderboard-content" class="leaderboard-content">
-            <?php
-            require 'actions/get-bestscore.php';
+    <div class="container">
+        <div class="leaderboard">
+            <div class="leaderboard-header">
+                <h2 class="leaderboard-title">Classement</h2>
+            </div>
+            <div id="leaderboard-content" class="leaderboard-content">
+                <?php
+                require 'actions/get-bestscore.php';
 
-            foreach ($fetchedUser as $user) {
-                echo '<div class="leaderboard-item">';
-                echo '<div class="player-info">';
-                echo '<span class="username">' . htmlspecialchars($user['username']) . '</span>';
-                echo '<span class="score">Best Score: ' . htmlspecialchars($user['best_score']) . '</span>';
-                echo '</div>';
-                echo '<div class="score-bar" style="width: ' . ($user['best_score'] / 30 * 100) . '%"></div>';
-                echo '</div>';
-            }
-            ?>
+                foreach ($fetchedUser as $user) {
+                    if ($user["best_score"] !== null) {
+                        echo '<div class="leaderboard-item">';
+                        echo '<div class="player-info">';
+                        echo '<span class="username">' . htmlspecialchars($user['username']) . '</span>';
+                        echo '<span class="score">Best Score: ' . htmlspecialchars($user['best_score']) . '</span>';
+                        echo '</div>';
+                        echo '<div class="score-bar" style="width: ' . ($user['best_score'] / 30 * 100) . '%"></div>';
+                        echo '</div>';
+                    }
+                }
+                ?>
+            </div>
         </div>
     </div>
-</div>
 
 </body>
 
