@@ -29,6 +29,9 @@ if (isset($_SESSION['lastErrMsg'])) {
                         <div class="question-title">
                             <h5 id="enunciate"></h5> <!--attention à id="enunciate"-->
                         </div>
+                        <div>
+                        <span id="timer">10</span>
+                        </div>
                         <div class="reponses">
                             <label class="radio" id="responseOne">
                                 <input type="radio" name="reponse" value="">

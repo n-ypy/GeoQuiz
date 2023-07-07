@@ -38,9 +38,26 @@ getQuestions(data).then((questions) => {
     let responseThree = document.querySelector("#responseThree");
     let responseFour = document.querySelector("#responseFour");
     let submitButton = document.querySelector(".btn");
+    let selectTimer = document.querySelector("#timer");
+    let time = 10;
     let answeredQuestions = [];
 
+
+    function timer() {
+        selectTimer.innerHTML = time;
+        if(time > 0){
+        time--;
+    } else {
+        submitButton.click()
+        time = 10
+    }
+    }
+    setInterval(timer, 1000);
+
     function submitResponse(questions) {
+        
+
+
         let getRandomEnunciate = getRandomInt(31);
         if (!answeredQuestions.includes(`${getRandomEnunciate}`)) {
             questionNumber.innerHTML = `(${q} of 30)`;
