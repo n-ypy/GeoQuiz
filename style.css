@@ -38,7 +38,7 @@ body {
 
 h1 {
   text-shadow: 5px 5px 5px #333333;
-  margin-top: 30px;
+  margin-top: 10px;
   margin-bottom: 20px;
 }
 
@@ -104,13 +104,21 @@ h1 {
   color: #777777;
 }
 
+#true {
+  border-color: 2px #53fd39;
+}
+
+#false {
+  border-color: 2px #ff2739;
+}
+
 .buttons {
   margin-top: 20px;
 }
 
 .buttons button,
 .btn {
-  width: 50%;
+  width: 200px;
   height: 40px;
   font-weight: bold;
   font-size: 16px;
@@ -131,6 +139,9 @@ h1 {
 
 @media (max-width: 768px) {
 
+  .container {
+    display:inline;
+  }
   .question-title h3 {
     font-size: 32px;
   }
