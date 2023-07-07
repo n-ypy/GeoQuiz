@@ -1,8 +1,7 @@
 let data = {
     key: 1,
     birthdate: 22
-}
-
+};
 
 async function getQuestions(data) {
     const response = await fetch("actions/get-questions.php", {
@@ -26,187 +25,174 @@ async function submitScore(data) {
     return response.json();
 }
 
-getQuestions(data).then((questions) => {
-    let i = 1;
-    let q = 1;
-    let score = 0;
-    let lastQuestion = null;
-    let questionNumber = document.querySelector("#questionNumber");
-    let enunciate = document.querySelector("#enunciate");
-    let responseOne = document.querySelector("#responseOne");
-    let responseTwo = document.querySelector("#responseTwo");
-    let responseThree = document.querySelector("#responseThree");
-    let responseFour = document.querySelector("#responseFour");
-    let submitButton = document.querySelector(".btn");
-    let selectTimer = document.querySelector("#timer");
-    let time = 10;
-    let answeredQuestions = [];
+getQuestions(data)
+    .then((questions) => {
+        let i = 1;
+        let q = 1;
+        let score = 0;
+        let lastQuestion = null;
+        let questionNumber = document.querySelector("#questionNumber");
+        let enunciate = document.querySelector("#enunciate");
+        let responseOne = document.querySelector("#responseOne");
+        let responseTwo = document.querySelector("#responseTwo");
+        let responseThree = document.querySelector("#responseThree");
+        let responseFour = document.querySelector("#responseFour");
+        let submitButton = document.querySelector(".btn");
+        let selectTimer = document.querySelector("#timer");
+        let time = 10;
+        let answeredQuestions = [];
 
-
-    function timer() {
-        selectTimer.innerHTML = time;
-        if (time > 0) {
-            time--;
-        } else {
-            submitButton.click()
-            time = 10
-        }
-    }
-    const interval = setInterval(timer, 1000);
-
-    function submitResponse(questions) {
-        let getRandomEnunciate = getRandomInt(31);
-        if (!answeredQuestions.includes(`${getRandomEnunciate}`)) {
-            questionNumber.innerHTML = `(${q} of 30)`;
-            enunciate.innerHTML = questions[getRandomEnunciate]["enunciate"];
-            responseOne.innerHTML = `
-                <input type="radio" name="response" value="${questions[getRandomEnunciate]['option1']}">
-                <span>${questions[getRandomEnunciate]['option1']}</span>`;
-            responseTwo.innerHTML = `
-                <input type="radio" name="response" value="${questions[getRandomEnunciate]['option2']}">
-                <span>${questions[getRandomEnunciate]['option2']}</span>`;
-            responseThree.innerHTML = `
-                <input type="radio" name="response" value="${questions[getRandomEnunciate]['option3']}">
-                <span>${questions[getRandomEnunciate]['option3']}</span>`;
-            responseFour.innerHTML = `
-                <input type="radio" name="response" value="${questions[getRandomEnunciate]['option4']}">
-                <span>${questions[getRandomEnunciate]['option4']}</span>`;
-            answeredQuestions.push(`${getRandomEnunciate}`);
-            lastQuestion = `${getRandomEnunciate}`;
-        } else {
-            submitResponse(questions);
-        }
-    }
-
-    submitResponse(questions);
-
-    submitButton.addEventListener("click", (event) => {
-
-        if (i < 60 && i % 2 === 0) {
-            interval = setInterval(timer, 1000);
-        } else {
-            clearInterval(interval)
-            time = 10;
-        }
-
-        if (i < 60 && i % 2 === 0) {
-            q++;
-            event.target.innerHTML = "Valider la réponse";
-            submitResponse(questions);
-        } else if (i < 60 && i % 2 === 1) {
-            if (i === 59) {
-                event.target.innerHTML = "Aller vers la leaderboard";
+        function timer() {
+            selectTimer.innerHTML = time;
+            if (time > 0) {
+                time--;
             } else {
-                event.target.innerHTML = "Question suivante";
+                submitButton.click();
+                time = 10;
             }
-            const form = event.target.closest("form");
-            const formData = new FormData(form);
-            console.log(formData.get("response"));
-            let answer = formData.get("response");
-            let compareAnswer =
-                formData.get("response") === questions[lastQuestion]["response"];
+        }
 
-            if (compareAnswer) {
-                score++;
-            }
-            console.log(score);
+        let interval = setInterval(timer, 1000);
 
-            if (
-                answer === questions[lastQuestion]["option1"] &&
-                compareAnswer ||
-                answer !== questions[lastQuestion]["option1"] &&
-                questions[lastQuestion]["response"] === questions[lastQuestion]["option1"]
-            ) {
+        function submitResponse(questions) {
+            let getRandomEnunciate = getRandomInt(31);
+            if (!answeredQuestions.includes(`${getRandomEnunciate}`)) {
+                questionNumber.innerHTML = `(${q} of 30)`;
+                enunciate.innerHTML = questions[getRandomEnunciate]["enunciate"];
                 responseOne.innerHTML = `
-                <input type="radio" name="response" value="${questions[lastQuestion]['option1']}" disabled>
-                <span><img src="img/true_lt.png" alt="Bonne réponse">  ${questions[lastQuestion]['option1']}</span>`;
-            } else if (answer === questions[lastQuestion]["option1"]) {
-                responseOne.innerHTML = `
-                <input type="radio" name="response" value="${questions[lastQuestion]['option1']}" disabled>
-                <span><img src="img/false_lt.png" alt="Mauvaise réponse">  ${questions[lastQuestion]['option1']}</span>`;
-            } else {
-                responseOne.innerHTML = `
-                <input type="radio" name="response" value="${questions[lastQuestion]['option1']}" disabled>
-                <span>${questions[lastQuestion]['option1']}</span>`;
-            }
-
-            if (
-                answer === questions[lastQuestion]["option2"] &&
-                compareAnswer ||
-                answer !== questions[lastQuestion]["option2"] &&
-                questions[lastQuestion]["response"] === questions[lastQuestion]["option2"]
-            ) {
+                    <input type="radio" name="response" value="${questions[getRandomEnunciate]['option1']}">
+                    <span>${questions[getRandomEnunciate]['option1']}</span>`;
                 responseTwo.innerHTML = `
-                <input type="radio" id="true" name="response" value="${questions[lastQuestion]['option2']}" disabled>
-                <span><img src="img/true_lt.png" alt="Bonne réponse">  ${questions[lastQuestion]['option2']}</span>`;
-            } else if (answer === questions[lastQuestion]["option2"]) {
-                responseTwo.innerHTML = `
-                <input type="radio" id="false" name="response" value="${questions[lastQuestion]['option2']}" disabled>
-                <span><img src="img/false_lt.png" alt="Mauvaise réponse">  ${questions[lastQuestion]['option2']}</span>`;
-            } else {
-                responseTwo.innerHTML = `
-                <input type="radio" name="response" value="${questions[lastQuestion]['option2']}" disabled>
-                <span>${questions[lastQuestion]['option2']}</span>`;
-            }
-
-            if (
-                answer === questions[lastQuestion]["option3"] &&
-                compareAnswer ||
-                answer !== questions[lastQuestion]["option3"] &&
-                questions[lastQuestion]["response"] === questions[lastQuestion]["option3"]
-            ) {
+                    <input type="radio" name="response" value="${questions[getRandomEnunciate]['option2']}">
+                    <span>${questions[getRandomEnunciate]['option2']}</span>`;
                 responseThree.innerHTML = `
-                <input type="radio" name="response" value="${questions[lastQuestion]['option3']}" disabled>
-                <span><img src="img/true_lt.png" alt="Bonne réponse">  ${questions[lastQuestion]['option3']}</span>`;
-            } else if (answer === questions[lastQuestion]["option3"]) {
-                responseThree.innerHTML = `
-                <input type="radio" name="response" value="${questions[lastQuestion]['option3']}" disabled>
-                <span><img src="img/false_lt.png" alt="Mauvaise réponse">  ${questions[lastQuestion]['option3']}</span>`;
+                    <input type="radio" name="response" value="${questions[getRandomEnunciate]['option3']}">
+                    <span>${questions[getRandomEnunciate]['option3']}</span>`;
+                responseFour.innerHTML = `
+                    <input type="radio" name="response" value="${questions[getRandomEnunciate]['option4']}">
+                    <span>${questions[getRandomEnunciate]['option4']}</span>`;
+                answeredQuestions.push(`${getRandomEnunciate}`);
+                lastQuestion = `${getRandomEnunciate}`;
             } else {
-                responseThree.innerHTML = `
-                <input type="radio" name="response" value="${questions[lastQuestion]['option3']}" disabled>
-                <span>${questions[lastQuestion]['option3']}</span>`;
+                submitResponse(questions);
             }
-
-            if (
-                answer === questions[lastQuestion]["option4"] &&
-                compareAnswer ||
-                answer !== questions[lastQuestion]["option4"] &&
-                questions[lastQuestion]["response"] === questions[lastQuestion]["option4"]
-            ) {
-                responseFour.innerHTML = `
-                <input type="radio" name="response" value="${questions[lastQuestion]['option4']}" disabled>
-                <span><img src="img/true_lt.png" alt="Bonne réponse">  ${questions[lastQuestion]['option4']}</span>`;
-            } else if (answer === questions[lastQuestion]["option4"]) {
-                responseFour.innerHTML = `
-                <input type="radio" name="response" value="${questions[lastQuestion]['option4']}" disabled>
-                <span><img src="img/false_lt.png" alt="Mauvaise réponse">  ${questions[lastQuestion]['option4']}</span>`;
-            } else {
-                responseFour.innerHTML = `
-                <input type="radio" name="response" value="${questions[lastQuestion]['option4']}" disabled>
-                <span>${questions[lastQuestion]['option4']}</span>`;
-            }
-
-        } else if (i >= 60) {
-            submitScore(score)
-                .then((response) => {
-                    if (response) {
-                        window.location.href = "leaderboard.php"
-                    } else {
-                        throw new Error("Erreur envoie de données vers leaderboard")
-                    }
-                });
-
         }
-        i++;
-        console.log(event.target.innerHTML);
-        event.preventDefault();
+
+        submitResponse(questions);
+
+        submitButton.addEventListener("click", (event) => {
+            if (i < 60 && i % 2 === 0) {
+                interval = setInterval(timer, 1000);
+                q++;
+                event.target.innerHTML = "Valider la réponse";
+                submitResponse(questions);
+            } else if (i < 60 && i % 2 === 1) {
+                clearInterval(interval);
+                time = 10;
+                if (i === 59) {
+                    event.target.innerHTML = "Aller vers le leaderboard";
+                } else {
+                    event.target.innerHTML = "Question suivante";
+                }
+                const form = event.target.closest("form");
+                const formData = new FormData(form);
+                console.log(formData.get("response"));
+                let answer = formData.get("response");
+                let compareAnswer = formData.get("response") === questions[lastQuestion]["response"];
+
+                if (compareAnswer) {
+                    score++;
+                }
+                console.log(score);
+
+                if (
+                    (answer === questions[lastQuestion]["option1"] && compareAnswer) ||
+                    (answer !== questions[lastQuestion]["option1"] && questions[lastQuestion]["response"] === questions[lastQuestion]["option1"])
+                ) {
+                    responseOne.innerHTML = `
+                        <input type="radio" name="response" value="${questions[lastQuestion]['option1']}" disabled>
+                        <span><img src="img/true_lt.png" alt="Bonne réponse">  ${questions[lastQuestion]['option1']}</span>`;
+                } else if (answer === questions[lastQuestion]["option1"]) {
+                    responseOne.innerHTML = `
+                        <input type="radio" name="response" value="${questions[lastQuestion]['option1']}" disabled>
+                        <span><img src="img/false_lt.png" alt="Mauvaise réponse">  ${questions[lastQuestion]['option1']}</span>`;
+                } else {
+                    responseOne.innerHTML = `
+                        <input type="radio" name="response" value="${questions[lastQuestion]['option1']}" disabled>
+                        <span>${questions[lastQuestion]['option1']}</span>`;
+                }
+
+                if (
+                    (answer === questions[lastQuestion]["option2"] && compareAnswer) ||
+                    (answer !== questions[lastQuestion]["option2"] && questions[lastQuestion]["response"] === questions[lastQuestion]["option2"])
+                ) {
+                    responseTwo.innerHTML = `
+                        <input type="radio" id="true" name="response" value="${questions[lastQuestion]['option2']}" disabled>
+                        <span><img src="img/true_lt.png" alt="Bonne réponse">  ${questions[lastQuestion]['option2']}</span>`;
+                } else if (answer === questions[lastQuestion]["option2"]) {
+                    responseTwo.innerHTML = `
+                        <input type="radio" id="false" name="response" value="${questions[lastQuestion]['option2']}" disabled>
+                        <span><img src="img/false_lt.png" alt="Mauvaise réponse">  ${questions[lastQuestion]['option2']}</span>`;
+                } else {
+                    responseTwo.innerHTML = `
+                        <input type="radio" name="response" value="${questions[lastQuestion]['option2']}" disabled>
+                        <span>${questions[lastQuestion]['option2']}</span>`;
+                }
+
+                if (
+                    (answer === questions[lastQuestion]["option3"] && compareAnswer) ||
+                    (answer !== questions[lastQuestion]["option3"] && questions[lastQuestion]["response"] === questions[lastQuestion]["option3"])
+                ) {
+                    responseThree.innerHTML = `
+                        <input type="radio" name="response" value="${questions[lastQuestion]['option3']}" disabled>
+                        <span><img src="img/true_lt.png" alt="Bonne réponse">  ${questions[lastQuestion]['option3']}</span>`;
+                } else if (answer === questions[lastQuestion]["option3"]) {
+                    responseThree.innerHTML = `
+                        <input type="radio" name="response" value="${questions[lastQuestion]['option3']}" disabled>
+                        <span><img src="img/false_lt.png" alt="Mauvaise réponse">  ${questions[lastQuestion]['option3']}</span>`;
+                } else {
+                    responseThree.innerHTML = `
+                        <input type="radio" name="response" value="${questions[lastQuestion]['option3']}" disabled>
+                        <span>${questions[lastQuestion]['option3']}</span>`;
+                }
+
+                if (
+                    (answer === questions[lastQuestion]["option4"] && compareAnswer) ||
+                    (answer !== questions[lastQuestion]["option4"] && questions[lastQuestion]["response"] === questions[lastQuestion]["option4"])
+                ) {
+                    responseFour.innerHTML = `
+                        <input type="radio" name="response" value="${questions[lastQuestion]['option4']}" disabled>
+                        <span><img src="img/true_lt.png" alt="Bonne réponse">  ${questions[lastQuestion]['option4']}</span>`;
+                } else if (answer === questions[lastQuestion]["option4"]) {
+                    responseFour.innerHTML = `
+                        <input type="radio" name="response" value="${questions[lastQuestion]['option4']}" disabled>
+                        <span><img src="img/false_lt.png" alt="Mauvaise réponse">  ${questions[lastQuestion]['option4']}</span>`;
+                } else {
+                    responseFour.innerHTML = `
+                        <input type="radio" name="response" value="${questions[lastQuestion]['option4']}" disabled>
+                        <span>${questions[lastQuestion]['option4']}</span>`;
+                }
+
+            } else if (i >= 60) {
+                submitScore(score)
+                    .then((response) => {
+                        if (response) {
+                            window.location.href = "leaderboard.php";
+                        } else {
+                            throw new Error("Erreur lors de l'envoi des données vers le leaderboard");
+                        }
+                    });
+            }
+            i++;
+            console.log(event.target.innerHTML);
+            event.preventDefault();
+        });
+
+        console.log(questions);
+    })
+    .catch((error) => {
+        console.error(error);
     });
-
-    console.log(questions);
-}).catch((error) => {
-    console.error(error);
-});
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
