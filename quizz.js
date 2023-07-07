@@ -1,15 +1,10 @@
-let data = {
-    key: 1,
-    birthdate: 22
-};
-
-async function getQuestions(data) {
+async function getQuestions() {
     const response = await fetch("actions/get-questions.php", {
         method: "POST",
         headers: {
             "Content-type": "application/json",
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify({ key: 1 }),
     });
     return response.json();
 }
@@ -25,7 +20,7 @@ async function submitScore(data) {
     return response.json();
 }
 
-getQuestions(data)
+getQuestions()
     .then((questions) => {
         let i = 1;
         let q = 1;
@@ -96,14 +91,12 @@ getQuestions(data)
                 }
                 const form = event.target.closest("form");
                 const formData = new FormData(form);
-                console.log(formData.get("response"));
                 let answer = formData.get("response");
                 let compareAnswer = formData.get("response") === questions[lastQuestion]["response"];
 
                 if (compareAnswer) {
                     score++;
                 }
-                console.log(score);
 
                 if (
                     (answer === questions[lastQuestion]["option1"] && compareAnswer) ||
@@ -184,11 +177,8 @@ getQuestions(data)
                     });
             }
             i++;
-            console.log(event.target.innerHTML);
             event.preventDefault();
         });
-
-        console.log(questions);
     })
     .catch((error) => {
         console.error(error);
