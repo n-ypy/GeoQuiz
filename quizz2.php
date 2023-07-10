@@ -1,9 +1,12 @@
 <?php
 session_start();
-if (isset($_SESSION['lastErrMsg'])) {
-    echo $_SESSION['lastErrMsg'];
+if (!isset($_SESSION['id']))
+{
+    header("Location: index.php?err=userNotLoggedIn");
+    exit();
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -11,10 +14,14 @@ if (isset($_SESSION['lastErrMsg'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>GéoQuiz</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+<nav id="topnav">
+        <input type="button" value="< Retour" onclick="history.back()">
+        <input type="button" value="Se déconnecter" onclick="location.href='actions/disconnect.php'">
+    </nav>
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-10 col-lg-10">
@@ -57,6 +64,5 @@ if (isset($_SESSION['lastErrMsg'])) {
         </div>
     </div>
 </body>
-<script src="quizz2.js"></script>
-
+<script src="js/quizz2.js"></script>
 </html>

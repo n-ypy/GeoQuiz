@@ -1,3 +1,12 @@
+<?php
+session_start();
+if (!isset($_SESSION['id']))
+{
+    header("Location: index.php?err=userNotLoggedIn");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -5,7 +14,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leaderboard</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <style>
         .container {
             padding: 20px;
@@ -69,13 +78,14 @@
                         require 'actions/get-bestscore.php';
 
                         foreach ($fetchedUser as $user) {
-                            if ($user["best_score"] !==NULL) { echo '<div class="leaderboard-item">';
-                            echo '<div class="player-info">';
-                            echo '<span class="username">' . htmlspecialchars($user['username']) . '</span>';
-                            echo '<span class="score">Best Score: ' . htmlspecialchars($user['best_score']) . '</span>';
-                            echo '</div>';
-                            echo '<div class="score-bar" style="width: ' . ($user['best_score'] / 30 * 100) . '%"></div>';
-                            echo '</div>';
+                            if ($user["best_score"] !== NULL) {
+                                echo '<div class="leaderboard-item">';
+                                echo '<div class="player-info">';
+                                echo '<span class="username">' . htmlspecialchars($user['username']) . '</span>';
+                                echo '<span class="score">Best Score: ' . htmlspecialchars($user['best_score']) . '</span>';
+                                echo '</div>';
+                                echo '<div class="score-bar" style="width: ' . ($user['best_score'] / 30 * 100) . '%"></div>';
+                                echo '</div>';
                             }
                         }
                         ?>
