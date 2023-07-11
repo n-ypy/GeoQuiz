@@ -66,6 +66,9 @@ if (!isset($_SESSION['id']))
 </head>
 
 <body>
+<nav id="topnav" style = "justify-content: end;">
+            <input type="button" value="Se déconnecter" onclick="location.href='actions/disconnect.php'">
+            </nav>
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-10 col-lg-10">
