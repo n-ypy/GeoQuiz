@@ -24,7 +24,7 @@ if (!isset($_SESSION['id']))
     </nav>
     <div class="container mt-5">
         <div class="row">
-            <div class="col-md-10 col-lg-10">
+            <div class="col">
                 <div class="question">
                     <div class="header">
                         <h1>GéoQuiz !</h1>
@@ -35,26 +35,25 @@ if (!isset($_SESSION['id']))
                     <div class="question-title">
                         <h5 id="enunciate"></h5> <!--attention à id="enunciate"-->
                     </div>
-
-                    <div class="buttons" id="option1"> <!--attention à id="responseOne"-->
-                        <button class="btn" onclick="option('option1')"></button>
-                    </div>
-                    <br>
-                    <div class="buttons" id="option2"> <!--attention à id="responseTwo"-->
-                        <button class="btn" onclick="option('option2')"></button>
-                    </div>
-                    <br>
-                    <div class="buttons" id="option3"> <!--attention à id="responseThree"-->
-                        <button class="btn" onclick="option('option3')"></button>
-                    </div>
-                    <br>
-                    <div class="buttons" id="option4"> <!--attention à id="responseFour"-->
-                        <button class="btn" onclick="option('option4')"></button>
-                    </div>
                     <div>
                         <span id="timer"></span><!--attention à id="timer"-->
                     </div>
-                    <div class="buttons" id="nextQuestion"><!--attention à id="nextQuestion"-->
+                    <div class="rollover" id="option1"> <!--attention à id="responseOne"-->
+                        <button class="btn" onclick="option('option1')"></button>
+                    </div>
+                    <br>
+                    <div class="rollover" id="option2"> <!--attention à id="responseTwo"-->
+                        <button class="btn" onclick="option('option2')"></button>
+                    </div>
+                    <br>
+                    <div class="rollover" id="option3"> <!--attention à id="responseThree"-->
+                        <button class="btn" onclick="option('option3')"></button>
+                    </div>
+                    <br>
+                    <div class="rollover" id="option4"> <!--attention à id="responseFour"-->
+                        <button class="btn" onclick="option('option4')"></button>
+                    </div>
+                    <div class="" id="nextQuestion"><!--attention à id="nextQuestion"-->
                         <button class="btn" onclick="nextQuestion()" hidden>
                             Question suivante
                         </button>

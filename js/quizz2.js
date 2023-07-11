@@ -76,19 +76,23 @@ function verifyResponse(answered = 0) {
 
     switch (questions[lastQuestion].response) {
         case questions[lastQuestion].option1:
-            option1Btn.innerHTML = `${questions[lastQuestion].option1} true`;
+            option1Btn.innerHTML = `<img src="img/true_lt.png" alt="Bonne réponse">  ${questions[lastQuestion].option1}`;
+            option1Btn.classList.add('true-button');
             break;
 
         case questions[lastQuestion].option2:
-            option2Btn.innerHTML = `${questions[lastQuestion].option2} true`;
+            option2Btn.innerHTML = `<img src="img/true_lt.png" alt="Bonne réponse">  ${questions[lastQuestion].option2}`;
+            option2Btn.classList.add('true-button');
             break;
 
         case questions[lastQuestion].option3:
-            option3Btn.innerHTML = `${questions[lastQuestion].option3} true`;
+            option3Btn.innerHTML = `<img src="img/true_lt.png" alt="Bonne réponse">  ${questions[lastQuestion].option3}`;
+            option3Btn.classList.add('true-button');
             break;
 
         case questions[lastQuestion].option4:
-            option4Btn.innerHTML = `${questions[lastQuestion].option4} true`;
+            option4Btn.innerHTML = `<img src="img/true_lt.png" alt="Bonne réponse">  ${questions[lastQuestion].option4}`;
+            option4Btn.classList.add('true-button');
             break;
 
         default:
@@ -99,7 +103,7 @@ function verifyResponse(answered = 0) {
         let selectAnswer = document.querySelector(`#${answered} button`);
         let verifyResponse = questions[lastQuestion][answered] === questions[lastQuestion]['response'];
         if (!verifyResponse) {
-            selectAnswer.innerHTML = `${questions[lastQuestion][answered]} wrong`;
+            selectAnswer.innerHTML = `<img src="img/false_lt.png" alt="Mauvaise réponse"> ${questions[lastQuestion][answered]}`;
         } else {
             score += 1 + time;
             console.log(score);
