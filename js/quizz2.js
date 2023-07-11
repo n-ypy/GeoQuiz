@@ -53,13 +53,6 @@ function getRandomInt(max) {
 }
 
 
-function option(option) {
-    verifyResponse(option);
-}
-
-
-
-
 function verifyResponse(answered = 0) {
 
     selectTimer.hidden = true;
