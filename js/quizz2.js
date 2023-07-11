@@ -56,28 +56,11 @@ function getRandomInt(max) {
 }
 
 
-function option1() {
-    answered = 'option1';
-    verifyResponse(answered);
+function option(option) {
+    verifyResponse(option);
 }
 
 
-function option2() {
-    answered = 'option2';
-    verifyResponse(answered);
-}
-
-
-function option3() {
-    answered = 'option3';
-    verifyResponse(answered);
-}
-
-
-function option4() {
-    answered = 'option4';
-    verifyResponse(answered);
-}
 
 
 function verifyResponse(answered = 0) {
