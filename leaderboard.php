@@ -1,3 +1,12 @@
+<?php
+session_start();
+if (!isset($_SESSION['id']))
+{
+    header("Location: index.php?err=userNotLoggedIn");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -5,8 +14,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leaderboard</title>
+<<<<<<< HEAD
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+=======
+    <link rel="stylesheet" href="css/style.css">
+>>>>>>> 2ad228d30a72a45d18899c31b429dbf2c5e3888b
     <style>
         .container {
             padding: 20px;
