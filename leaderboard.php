@@ -93,9 +93,7 @@ if (!isset($_SESSION['id']))
                             }
                         }
                         ?>
-                        <button class="btn" style="margin: 10px; text-decoration: none; color: inherit;"><a href="http://tp-quizz.dvl.to/TP-Quizz/quizz.php">Rejouer !</a></button>
-                        <br>
-                        <button class="btn" style="margin: 10px;"><a href="http://tp-quizz.dvl.to/TP-Quizz/index.php">Nouveau joueur !</a></button>
+                        <button class="btn" style="margin: 10px; text-decoration: none; color: inherit;" onclick="window.location.href='index.php';">Rejouer !</button>
                     </div>
                 </div>
             </div>
