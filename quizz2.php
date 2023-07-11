@@ -39,19 +39,19 @@ if (!isset($_SESSION['id']))
                         <span id="timer"></span><!--attention à id="timer"-->
                     </div>
                     <div class="rollover" id="option1"> <!--attention à id="responseOne"-->
-                        <button class="btn" onclick="option1()"></button>
+                        <button class="btn" onclick="option('option1')"></button>
                     </div>
                     <br>
                     <div class="rollover" id="option2"> <!--attention à id="responseTwo"-->
-                        <button class="btn" onclick="option2()"></button>
+                        <button class="btn" onclick="option('option2')"></button>
                     </div>
                     <br>
                     <div class="rollover" id="option3"> <!--attention à id="responseThree"-->
-                        <button class="btn" onclick="option3()"></button>
+                        <button class="btn" onclick="option('option3')"></button>
                     </div>
                     <br>
                     <div class="rollover" id="option4"> <!--attention à id="responseFour"-->
-                        <button class="btn" onclick="option4()"></button>
+                        <button class="btn" onclick="option('option4')"></button>
                     </div>
                     <div class="" id="nextQuestion"><!--attention à id="nextQuestion"-->
                         <button class="btn" onclick="nextQuestion()" hidden>
