@@ -1,9 +1,12 @@
 <?php
 session_start();
-if (isset($_SESSION['lastErrMsg'])) {
-    echo $_SESSION['lastErrMsg'];
+if (!isset($_SESSION['id']))
+{
+    header("Location: index.php?err=userNotLoggedIn");
+    exit();
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -11,11 +14,19 @@ if (isset($_SESSION['lastErrMsg'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>GéoQuiz</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+<<<<<<< HEAD
     <div class="container">
+=======
+    <nav id="topnav">
+        <input type="button" value="< Retour" onclick="history.back()">
+        <input type="button" value="Se déconnecter" onclick="location.href='actions/disconnect.php'">
+    </nav>
+    <div class="container mt-5">
+>>>>>>> 2ad228d30a72a45d18899c31b429dbf2c5e3888b
         <div class="row">
             <div class="col">
                 <div class="question">
@@ -30,7 +41,11 @@ if (isset($_SESSION['lastErrMsg'])) {
                             <h5 id="enunciate"></h5> <!--attention à id="enunciate"-->
                         </div>
                         <div>
+<<<<<<< HEAD
                         <span id="timer" class="timer-container"></span>
+=======
+                            <span id="timer"></span>
+>>>>>>> 2ad228d30a72a45d18899c31b429dbf2c5e3888b
                         </div>
                         <div class="reponses">
                             <label class="radio" id="responseOne">
@@ -70,6 +85,5 @@ if (isset($_SESSION['lastErrMsg'])) {
         </div>
     </div>
 </body>
-<script src="quizz.js"></script>
-
+<script src="js/quizz.js"></script>
 </html>
