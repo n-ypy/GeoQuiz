@@ -24,7 +24,7 @@ if (!isset($_SESSION['id']))
     </nav>
     <div class="container mt-5">
         <div class="row">
-            <div class="col-md-10 col-lg-10">
+            <div class="col">
                 <div class="question">
                     <div class="header">
                         <h1>GéoQuiz !</h1>
@@ -66,7 +66,7 @@ if (!isset($_SESSION['id']))
                                 <span></span> <!--attention à id="responseFour"-->
                             </label>
                         </div>
-                        <div class="buttons">
+                        <div>
                             <button class="btn" type="submit">
                                 Valider la réponse
                             </button>

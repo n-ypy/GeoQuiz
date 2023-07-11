@@ -66,12 +66,13 @@ if (!isset($_SESSION['id']))
 </head>
 
 <body>
+
 <nav id="topnav" style = "justify-content: end;">
             <input type="button" value="Se déconnecter" onclick="location.href='actions/disconnect.php'">
             </nav>
-    <div class="container mt-5">
+    <div class="container">
         <div class="row">
-            <div class="col-md-10 col-lg-10">
+            <div class="col">
                 <div class="leaderboard">
                     <div class="leaderboard-header">
                         <h2 class="leaderboard-title">Classement</h2>
@@ -92,6 +93,9 @@ if (!isset($_SESSION['id']))
                             }
                         }
                         ?>
+                        <button class="btn" style="margin: 10px; text-decoration: none; color: inherit;"><a href="http://tp-quizz.dvl.to/TP-Quizz/quizz.php">Rejouer !</a></button>
+                        <br>
+                        <button class="btn" style="margin: 10px;"><a href="http://tp-quizz.dvl.to/TP-Quizz/index.php">Nouveau joueur !</a></button>
                     </div>
                 </div>
             </div>
