@@ -9,7 +9,6 @@ async function getQuestions() {
     return response.json();
 }
 
-
 async function submitScore(data) {
     const response = await fetch("actions/submit-score.php", {
         method: "POST",
@@ -20,8 +19,6 @@ async function submitScore(data) {
     });
     return response.json();
 }
-
-
 
 let q = 1;
 let score = 0;
@@ -138,12 +135,20 @@ function nextQuestion() {
         enunciate.innerHTML = questions[getRandomEnunciate].enunciate;
         option1Btn.innerHTML = questions[getRandomEnunciate].option1;
         option1Btn.disabled = false;
+        option1Btn.classList.remove('true-button');
+        option1Btn.classList.remove('false-button');
         option2Btn.innerHTML = questions[getRandomEnunciate].option2;
         option2Btn.disabled = false;
+        option2Btn.classList.remove('true-button');
+        option2Btn.classList.remove('false-button');
         option3Btn.innerHTML = questions[getRandomEnunciate].option3;
         option3Btn.disabled = false;
+        option3Btn.classList.remove('true-button');
+        option3Btn.classList.remove('false-button');
         option4Btn.innerHTML = questions[getRandomEnunciate].option4;
         option4Btn.disabled = false;
+        option4Btn.classList.remove('true-button');
+        option4Btn.classList.remove('false-button');
         answeredQuestions.push(getRandomEnunciate);
         lastQuestion = getRandomEnunciate;
         interval = setInterval(timer, 1000);
