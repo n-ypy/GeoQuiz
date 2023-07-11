@@ -33,11 +33,11 @@ if (isset($_SESSION['lastErrMsg'])) {
         } else {
             echo <<<html
 
-        <h1>Bienvenue sur <b>GéoQuiz !</b></h1>
-        <form action="actions/login.php" method="POST">
-            <input type="text" name="username" class="form-control" placeholder="Prénom" value="<?=isset($_SESSION['username']) ? $_SESSION['username'] : "" ?>" aria-label="Entre ton prénom :" required>
-            <button type="submit" class="btn">Jouer!</button>
-        </form>
+            <h1>Bienvenue sur <b>GéoQuiz !</b></h1>
+            <form action="actions/login.php" method="POST">
+                <input type="text" name="username" class="form-control" placeholder="Prénom" aria-label="Entre ton prénom :" required>
+                <button type="submit" class="btn mt-3">Jouer!</button>
+            </form>
 
     html;
         }
