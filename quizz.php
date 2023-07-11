@@ -18,15 +18,11 @@ if (!isset($_SESSION['id']))
 </head>
 
 <body>
-<<<<<<< HEAD
-    <div class="container">
-=======
     <nav id="topnav">
         <input type="button" value="< Retour" onclick="history.back()">
         <input type="button" value="Se déconnecter" onclick="location.href='actions/disconnect.php'">
     </nav>
     <div class="container mt-5">
->>>>>>> 2ad228d30a72a45d18899c31b429dbf2c5e3888b
         <div class="row">
             <div class="col">
                 <div class="question">
@@ -41,11 +37,7 @@ if (!isset($_SESSION['id']))
                             <h5 id="enunciate"></h5> <!--attention à id="enunciate"-->
                         </div>
                         <div>
-<<<<<<< HEAD
-                        <span id="timer" class="timer-container"></span>
-=======
                             <span id="timer"></span>
->>>>>>> 2ad228d30a72a45d18899c31b429dbf2c5e3888b
                         </div>
                         <div class="reponses">
                             <label class="radio" id="responseOne">

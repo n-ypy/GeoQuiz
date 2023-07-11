@@ -140,6 +140,16 @@ a {
   color: #1f1f1f;
 }
 
+.true-button {
+  background-color: #ffffff;
+  color: #00ab33;
+}
+
+.false-button {
+  background-color: #ffc1c1;
+  color: #f71515;
+}
+
 .timer-container {
   background-color: #163a79;
   width: 25px;
@@ -180,15 +190,9 @@ a {
   top: 0;
 }
 
-<<<<<<< HEAD:style.css
-
-
-
-=======
 #topnav input {
   margin-left: 10px;
   margin-right: 10px;
   margin-top: 10px;
 }
 /* FIN CSS pour la navbar */
->>>>>>> 2ad228d30a72a45d18899c31b429dbf2c5e3888b:css/style.css
