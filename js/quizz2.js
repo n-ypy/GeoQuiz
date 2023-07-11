@@ -57,30 +57,30 @@ function getRandomInt(max) {
 
 
 function option1() {
-    response = 'option1';
-    verifyResponse(response);
+    answered = 'option1';
+    verifyResponse(answered);
 }
 
 
 function option2() {
-    response = 'option2';
-    verifyResponse(response);
+    answered = 'option2';
+    verifyResponse(answered);
 }
 
 
 function option3() {
-    response = 'option3';
-    verifyResponse(response);
+    answered = 'option3';
+    verifyResponse(answered);
 }
 
 
 function option4() {
-    response = 'option4';
-    verifyResponse(response);
+    answered = 'option4';
+    verifyResponse(answered);
 }
 
 
-function verifyResponse(response = 0) {
+function verifyResponse(answered = 0) {
 
     selectTimer.hidden = true;
     nextQuestionButton.hidden = false;
@@ -116,13 +116,14 @@ function verifyResponse(response = 0) {
             break;
     }
 
-    if (response !== 0) {
-        let selectAnswer = document.querySelector(`#${response} button`);
-        let verifyResponse = questions[lastQuestion][response] === questions[lastQuestion].response;
+    if (answered !== 0) {
+        let selectAnswer = document.querySelector(`#${answered} button`);
+        let verifyResponse = questions[lastQuestion][answered] === questions[lastQuestion]['response'];
         if (!verifyResponse) {
-            selectAnswer.innerHTML = `<img src="img/false_lt.png" alt="Mauvaise réponse">  ${questions[lastQuestion].response}`;
+            selectAnswer.innerHTML = `<img src="img/false_lt.png" alt="Mauvaise réponse"> ${questions[lastQuestion][answered]}`;
         } else {
-            score++;
+            score += 1 + time;
+            console.log(score);
         }
     }
 
