@@ -196,3 +196,19 @@ a {
   margin-top: 10px;
 }
 /* FIN CSS pour la navbar */
+
+
+#btn-list-index #column button{
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+}
+
+#btn-list-index #row button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  }
+
