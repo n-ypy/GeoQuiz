@@ -62,7 +62,7 @@ function login(array $fetchedUser)
     $_SESSION["username"] = $_POST['username'];
     $_SESSION["id"] = $fetchedUser["id"];
     $_SESSION["best_score"] = $fetchedUser["best_score"];
-    header('Location: ../quizz.php');
+    header('Location: ../index.php');
     exit();
 }
 
