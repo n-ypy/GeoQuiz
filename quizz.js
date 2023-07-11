@@ -85,7 +85,7 @@ getQuestions()
                 clearInterval(interval);
                 time = 10;
                 if (i === 59) {
-                    event.target.innerHTML = "Aller vers le leaderboard";
+                    event.target.innerHTML = "Scores";
                 } else {
                     event.target.innerHTML = "Question suivante";
                 }

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leaderboard</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <style>
         .container {
             padding: 20px;
@@ -57,9 +58,9 @@
 </head>
 
 <body>
-    <div class="container mt-5">
+    <div class="container">
         <div class="row">
-            <div class="col-md-10 col-lg-10">
+            <div class="col">
                 <div class="leaderboard">
                     <div class="leaderboard-header">
                         <h2 class="leaderboard-title">Classement</h2>
@@ -69,16 +70,20 @@
                         require 'actions/get-bestscore.php';
 
                         foreach ($fetchedUser as $user) {
-                            if ($user["best_score"] !==NULL) { echo '<div class="leaderboard-item">';
-                            echo '<div class="player-info">';
-                            echo '<span class="username">' . htmlspecialchars($user['username']) . '</span>';
-                            echo '<span class="score">Best Score: ' . htmlspecialchars($user['best_score']) . '</span>';
-                            echo '</div>';
-                            echo '<div class="score-bar" style="width: ' . ($user['best_score'] / 30 * 100) . '%"></div>';
-                            echo '</div>';
+                            if ($user["best_score"] !== NULL) {
+                                echo '<div class="leaderboard-item">';
+                                echo '<div class="player-info">';
+                                echo '<span class="username">' . htmlspecialchars($user['username']) . '</span>';
+                                echo '<span class="score">Best Score: ' . htmlspecialchars($user['best_score']) . '</span>';
+                                echo '</div>';
+                                echo '<div class="score-bar" style="width: ' . ($user['best_score'] / 30 * 100) . '%"></div>';
+                                echo '</div>';
                             }
                         }
                         ?>
+                        <button class="btn" style="margin: 10px; text-decoration: none; color: inherit;"><a href="http://tp-quizz.dvl.to/TP-Quizz/quizz.php">Rejouer !</a></button>
+                        <br>
+                        <button class="btn" style="margin: 10px;"><a href="http://tp-quizz.dvl.to/TP-Quizz/index.php">Nouveau joueur !</a></button>
                     </div>
                 </div>
             </div>

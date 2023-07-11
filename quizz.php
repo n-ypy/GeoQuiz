@@ -15,9 +15,9 @@ if (isset($_SESSION['lastErrMsg'])) {
 </head>
 
 <body>
-    <div class="container mt-5">
+    <div class="container">
         <div class="row">
-            <div class="col-md-10 col-lg-10">
+            <div class="col">
                 <div class="question">
                     <div class="header">
                         <h1>GéoQuiz !</h1>
@@ -30,7 +30,7 @@ if (isset($_SESSION['lastErrMsg'])) {
                             <h5 id="enunciate"></h5> <!--attention à id="enunciate"-->
                         </div>
                         <div>
-                        <span id="timer"></span>
+                        <span id="timer" class="timer-container"></span>
                         </div>
                         <div class="reponses">
                             <label class="radio" id="responseOne">
@@ -59,7 +59,7 @@ if (isset($_SESSION['lastErrMsg'])) {
                                 <span></span> <!--attention à id="responseFour"-->
                             </label>
                         </div>
-                        <div class="buttons">
+                        <div>
                             <button class="btn" type="submit">
                                 Valider la réponse
                             </button>
