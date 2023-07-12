@@ -88,7 +88,7 @@ if (!isset($_SESSION['id']))
                                 echo '<span class="username">' . htmlspecialchars($user['username']) . '</span>';
                                 echo '<span class="score">Best Score: ' . htmlspecialchars($user['best_score']) . '</span>';
                                 echo '</div>';
-                                echo '<div class="score-bar" style="width: ' . ($user['best_score'] / 30 * 100) . '%"></div>';
+                                echo '<div class="score-bar" style="width: ' . ($user['best_score'] / 100 * 100) . '%"></div>';
                                 echo '</div>';
                             }
                         }
