@@ -22,7 +22,7 @@ if (!isset($_SESSION['id']))
         <input type="button" value="< Retour" onclick="history.back()">
         <input type="button" value="Se déconnecter" onclick="location.href='actions/disconnect.php'">
     </nav>
-    <div class="container mt-5">
+    <div class="container">
         <div class="row">
             <div class="col">
                 <div class="question">
@@ -67,7 +67,7 @@ if (!isset($_SESSION['id']))
                             </label>
                         </div>
                         <div>
-                            <button class="btn" type="submit">
+                            <button class="btn nextQ" type="submit">
                                 Valider la réponse
                             </button>
                         </div>

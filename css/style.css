@@ -117,6 +117,10 @@ a {
   border-color: 2px #ff2739;
 }
 
+.submit-button {
+  float: right;
+}
+
 .buttons, .button,
 .btn {
   width: 200px;
