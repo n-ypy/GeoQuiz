@@ -34,6 +34,7 @@ getQuestions()
         let responseFour = document.querySelector("#responseFour");
         let submitButton = document.querySelector(".btn");
         let selectTimer = document.querySelector("#timer");
+        let displayUserScore = document.querySelector("#userScore");
         let time = 10;
         let answeredQuestions = [];
 
@@ -96,6 +97,7 @@ getQuestions()
 
                 if (compareAnswer) {
                     score++;
+                    displayUserScore.innerHTML = `${score} points`
                 }
 
                 if (
