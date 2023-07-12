@@ -69,6 +69,8 @@ a {
   text-shadow: 3px 3px 5px #333333;
 }
 
+
+
 .reponses {
   margin-top: 10px;
   display: inline-block;
@@ -117,7 +119,8 @@ a {
   border-color: 2px #ff2739;
 }
 
-.submit-button {
+.btn-nextQ {
+  display: end;
   float: right;
 }
 
@@ -192,6 +195,7 @@ a {
   justify-content: space-between;
   align-items: start;
   top: 0;
+  box-shadow: none;
 }
 
 #topnav input {
@@ -216,3 +220,18 @@ flex-direction: column;
   flex-direction: row;
   }
 
+  #topnav input {
+    width: 110px;
+    color: #666666;
+    background-color: #ffffff;
+    border-radius: 25px;
+    box-shadow: none;
+    cursor: pointer;
+  }
+  
+  #topnav input:hover {
+    color: #666666;
+    background-color: #00ffae;
+    border-radius: 25px;
+    cursor: pointer;
+  }
