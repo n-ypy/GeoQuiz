@@ -4,7 +4,6 @@ if (isset($_SESSION['lastErrMsg'])) {
     echo $_SESSION['lastErrMsg'];
 }
 
-
 ?>
 
 <!DOCTYPE html>

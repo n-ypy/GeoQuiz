@@ -69,17 +69,15 @@ a {
   text-shadow: 3px 3px 5px #333333;
 }
 
-
-
 .reponses {
   margin-top: 10px;
   display: inline-block;
 }
 
-.reponses label {
+.reponses label, input {
   display: block;
-  margin-bottom: 10px;
   width: 200px;
+  margin-bottom: 10px;
   padding: 6px 12px;
   background-color: #ffffff;
   color: #333333;
