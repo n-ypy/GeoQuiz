@@ -34,6 +34,7 @@ let option3Btn = document.querySelector("#option3 button");
 let option4Btn = document.querySelector("#option4 button");
 let nextQuestionButton = document.querySelector("#nextQuestion button");
 let selectTimer = document.querySelector("#timer");
+let displayUserScore = document.querySelector("#userScore");
 
 
 
@@ -96,7 +97,7 @@ function verifyResponse(answered = 0) {
             selectAnswer.innerHTML = `<img src="img/false_lt.png" alt="Mauvaise réponse"> ${questions[lastQuestion][answered]}`;
         } else {
             score += 1 + time;
-            console.log(score);
+            displayUserScore.innerHTML = `${score} points`
         }
     }
 
