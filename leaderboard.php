@@ -88,12 +88,12 @@ if (!isset($_SESSION['id']))
                                 echo '<span class="username">' . htmlspecialchars($user['username']) . '</span>';
                                 echo '<span class="score">Best Score: ' . htmlspecialchars($user['best_score']) . '</span>';
                                 echo '</div>';
-                                echo '<div class="score-bar" style="width: ' . ($user['best_score'] / 100 * 100) . '%"></div>';
+                                echo '<div class="score-bar" style="width: ' . ($user['best_score'] / $overallBestScore * 100) . '%"></div>';
                                 echo '</div>';
                             }
                         }
                         ?>
-                        <button class="btn" style="margin: 10px; text-decoration: none; color: inherit;" onclick="window.location.href='index.php';">Rejouer !</button>
+                        <button class="btn" style="margin: 10px; text-decoration: none;;" onclick="window.location.href='index.php';">Rejouer !</button>
                     </div>
                 </div>
             </div>
