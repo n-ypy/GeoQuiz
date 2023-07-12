@@ -222,16 +222,19 @@ flex-direction: column;
 
   #topnav input {
     width: 110px;
-    color: #666666;
-    background-color: #ffffff;
+    color: #777777;
+    background-color: #dcdcdc;
     border-radius: 25px;
     box-shadow: none;
     cursor: pointer;
   }
   
   #topnav input:hover {
-    color: #666666;
-    background-color: #00ffae;
+    color: #ffffff;
+    border-color: #53fd39;
+    background-color: #53fd39;
     border-radius: 25px;
     cursor: pointer;
+    box-shadow: none;
+
   }
