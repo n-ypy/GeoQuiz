@@ -144,8 +144,9 @@ function nextQuestion() {
         option4Btn.classList.remove('false-button');
         answeredQuestions.push(getRandomEnunciate);
         lastQuestion = getRandomEnunciate;
-        interval = setInterval(timer, 1000);
         time = 10;
+        timer();
+        interval = setInterval(timer, 1000);
         q++;
     } else {
         nextQuestion();
