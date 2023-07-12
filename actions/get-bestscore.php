@@ -12,3 +12,5 @@ try {
 }
 
 
+$overallBestScore = $fetchedUser[0]['best_score'];
+
