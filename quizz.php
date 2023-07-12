@@ -20,6 +20,7 @@ if (!isset($_SESSION['id']))
 <body>
     <nav id="topnav">
         <input type="button" value="< Retour" onclick="history.back()">
+        <span><?=$_SESSION['username']?> : <span id="userScore">0 points</span></span>
         <input type="button" value="Se déconnecter" onclick="location.href='actions/disconnect.php'">
     </nav>
     <div class="container">
