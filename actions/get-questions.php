@@ -12,7 +12,7 @@ function getQuestions($key = false)
             $fetchedQuestions = $prepareQuestions->fetchAll();
         } catch (PDOException $exception) {
             $_SESSION['lastErrMsg'] = $exception->getMessage();
-            header('Location: ../quizz.php?err=fetchQuestionsFailed');
+            header('Location: ../quiz.php?err=fetchQuestionsFailed');
             exit();
         }
     } else {
