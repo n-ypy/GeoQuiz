@@ -1,21 +1,40 @@
 @keyframes color {
-  0%   { background: #a5fd3925; }
-  20%  { background: #00ffae25; }
-  40%  { background: #fadc3025; }
-  60%  { background: #00ffae25; }
-  80%  { background: #fadc3025; }
-  100% { background: #a5fd3925; }
+  0% {
+    background: #a5fd3925;
+  }
+
+  20% {
+    background: #00ffae25;
+  }
+
+  40% {
+    background: #fadc3025;
+  }
+
+  60% {
+    background: #00ffae25;
+  }
+
+  80% {
+    background: #fadc3025;
+  }
+
+  100% {
+    background: #a5fd3925;
+  }
 }
 
 body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: calc(100vh - 16px); /* Ajout modif pour enlever la scrollbar */
+  height: calc(100vh - 16px);
+  /* Ajout modif pour enlever la scrollbar */
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-weight: bold;
   text-align: center;
-  background: #a5fd3975; /* Fallback */
+  background: #a5fd3975;
+  /* Fallback */
   background: linear-gradient(to bottom, #a5fd3982 0%, #a5fd3982 100%);
   animation: color 10s infinite linear;
 }
@@ -29,8 +48,8 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  width:550px;
-  height:550px;
+  width: 550px;
+  height: 550px;
   color: #fff;
   border-radius: 10px;
   text-align: center;
@@ -41,6 +60,11 @@ h1 {
   margin-top: 10px;
   margin-bottom: 20px;
 }
+
+#welcome-msg {
+  width: 50%;
+}
+
 
 a {
   color: #333333;
@@ -62,19 +86,19 @@ a {
 
 .question-title h5 {
   font-size: 18px;
-  height: 75px;
   align-items: center;
   text-align: center;
   margin: 0px 30px 0px 30px;
   text-shadow: 3px 3px 5px #333333;
 }
 
-.reponses {
+.options {
   margin-top: 10px;
   display: inline-block;
 }
 
-.reponses label, input {
+.options label,
+input {
   display: block;
   width: 200px;
   margin-bottom: 10px;
@@ -87,25 +111,25 @@ a {
   box-shadow: 3px 3px 5px #333333;
 }
 
-.reponses label:hover {
+.options label:hover {
   background-color: #53fd39;
   color: #ffffff;
 }
 
-.reponses label:checked {
+.options label:checked {
   background-color: #b5c2a5;
   color: #777777;
 }
 
-.reponses input[type="radio"] {
+.options input[type="radio"] {
   display: none;
 }
 
-.reponses input[type="radio"]:checked + span {
+.options input[type="radio"]:checked+span {
   color: #777777;
 }
 
-.reponses input[type="radio"]:checked + span:hover {
+.options input[type="radio"]:checked+span:hover {
   color: #777777;
 }
 
@@ -117,12 +141,8 @@ a {
   border-color: 2px #ff2739;
 }
 
-.btn-nextQ {
-  display: end;
-  float: right;
-}
-
-.buttons, .button,
+.buttons,
+.button,
 .btn {
   width: 200px;
   height: 40px;
@@ -155,18 +175,19 @@ a {
   color: #f71515;
 }
 
-.timer-container {
-  background-color: #163a79;
-  width: 25px;
-  height: 25px;
-  border-radius: 15px;
-}
-
 @media (max-width: 768px) {
 
-  .container {
-    display:inline;
+  #welcome-msg{
+    width: 100%;
+    padding-bottom: 50px;
   }
+
+  #index-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .question-title h3 {
     font-size: 32px;
   }
@@ -186,7 +207,7 @@ a {
 }
 
 /* DEBUT CSS pour la navbar */
-#topnav {   
+#topnav {
   position: fixed;
   width: 100vw;
   display: flex;
@@ -197,42 +218,102 @@ a {
 }
 
 #topnav input {
+  width: unset;
   margin-left: 10px;
   margin-right: 10px;
   margin-top: 10px;
 }
+
+#topnav p {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%); 
+}
+
 /* FIN CSS pour la navbar */
 
 
-#btn-list-index #column button{
-display: flex;
-justify-content: center;
-align-items: center;
-flex-direction: column;
+#btn-list-index #column button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-#btn-list-index #row button{
+#btn-list-index #row button {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  }
+}
 
-  #topnav input {
-    width: 110px;
-    color: #777777;
-    background-color: #dcdcdc;
-    border-radius: 25px;
-    box-shadow: none;
-    cursor: pointer;
-  }
-  
-  #topnav input:hover {
-    color: #ffffff;
-    border-color: #53fd39;
-    background-color: #53fd39;
-    border-radius: 25px;
-    cursor: pointer;
-    box-shadow: none;
+#topnav input {
+  color: #777777;
+  background-color: #dcdcdc;
+  border-radius: 25px;
+  box-shadow: none;
+  cursor: pointer;
+}
 
+#topnav input:hover {
+  color: #ffffff;
+  border-color: #53fd39;
+  background-color: #53fd39;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: none;
+
+}
+
+.timer-container{
+  margin: auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+#countdown {
+  position: relative;
+  margin: auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  height: 40px;
+  width: 40px;
+  text-align: center;
+}
+
+#countdown .countdown-number {
+  color: white;
+  display: inline-block;
+  line-height: 40px;
+}
+
+#countdown svg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  transform: rotateY(-180deg) rotateZ(-90deg);
+}
+
+#countdown svg circle {
+  stroke-dasharray: 113px;
+  stroke-dashoffset: 0px;
+  stroke-linecap: round;
+  stroke-width: 2px;
+  stroke: white;
+  fill: none;
+}
+
+.animate-circle {
+  animation: countdown 10s linear forwards;
+}
+
+@keyframes countdown {
+  from {
+    stroke-dashoffset: 0px;
   }
+  to {
+    stroke-dashoffset: 113px;
+  }
+}
