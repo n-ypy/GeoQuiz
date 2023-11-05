@@ -1,7 +1,6 @@
 <?php
 session_start();
-if (!isset($_SESSION['id']))
-{
+if (!isset($_SESSION['id'])) {
     header("Location: index.php?err=userNotLoggedIn");
     exit();
 }
@@ -12,8 +11,8 @@ if (!isset($_SESSION['id']))
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leaderboard</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <title>Classement</title>
     <link rel="stylesheet" href="css/style.css">
     <style>
         .container {
@@ -59,17 +58,23 @@ if (!isset($_SESSION['id']))
             width: 100%;
             height: 10px;
             background-color: #15c400;
-            margin-top: 10px;
             position: relative;
+            align-self: flex-start;
+        }
+
+        .score-bar-container {
+            width: 100%;
+            background-color: #908d8d59;
+            margin-top: 10px;
         }
     </style>
 </head>
 
 <body>
 
-<nav id="topnav" style = "justify-content: end;">
-            <input type="button" value="Se déconnecter" onclick="location.href='actions/disconnect.php'">
-            </nav>
+    <nav id="topnav" style="justify-content: end;">
+        <input type="button" value="Déconnexion" onclick="location.href='actions/disconnect.php'">
+    </nav>
     <div class="container">
         <div class="row">
             <div class="col">
@@ -81,14 +86,33 @@ if (!isset($_SESSION['id']))
                         <?php
                         require 'actions/get-bestscore.php';
 
+                        if (isset($_GET["score"]) && isset($_SESSION["username"])) {
+                            $scorePercent = 0;
+
+                            if($_GET["score"] != 0){
+                                $scorePercent = $_GET["score"] / $overallBestScore * 100;
+                            }
+
+                            echo '<div class="leaderboard-item">';
+                            echo '<div class="player-info">';
+                            echo '<span class="score">Votre Score: ' . $_GET["score"] . '</span>';
+                            echo '</div>';
+                            echo '<div class="score-bar-container">';
+                            echo '<div class="score-bar" style="width: ' . ($scorePercent) . '%"></div>';
+                            echo '</div>';
+                            echo '</div>';
+                        }
+
                         foreach ($fetchedUser as $user) {
                             if ($user["best_score"] !== NULL) {
                                 echo '<div class="leaderboard-item">';
                                 echo '<div class="player-info">';
                                 echo '<span class="username">' . htmlspecialchars($user['username']) . '</span>';
-                                echo '<span class="score">Best Score: ' . htmlspecialchars($user['best_score']) . '</span>';
+                                echo '<span class="score">Meilleur Score: ' . htmlspecialchars($user['best_score']) . '</span>';
                                 echo '</div>';
+                                echo '<div class="score-bar-container">';
                                 echo '<div class="score-bar" style="width: ' . ($user['best_score'] / $overallBestScore * 100) . '%"></div>';
+                                echo '</div>';
                                 echo '</div>';
                             }
                         }
