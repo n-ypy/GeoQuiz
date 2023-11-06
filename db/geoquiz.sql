@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mysql
--- Generation Time: Nov 06, 2023 at 01:33 PM
+-- Generation Time: Nov 06, 2023 at 02:27 PM
 -- Server version: 10.6.12-MariaDB-1:10.6.12+maria~ubu2004-log
 -- PHP Version: 8.2.1
 
@@ -54,7 +54,6 @@ INSERT INTO `questions` (`id`, `question`, `answer`, `option_one`, `option_two`,
 (10, 'Quelle est la plus grande forêt tropicale du monde ?', 'Amazonie', 'Amazonie', 'Sumatra', 'Congo', 'Bornéo'),
 (11, 'Quelle est la monnaie de l\'Inde ?', 'Roupie indienne', 'Baht thaïlandais', 'Roupie indienne', 'Dollar australien', 'Yen japonais'),
 (12, 'Quel océan est situé à l\'est de l\'Afrique ?', 'Océan Indien', 'Océan Pacifique', 'Océan Indien', 'Océan Atlantique', 'Océan Arctique'),
-(13, 'Quelle est la plus grande île de la Méditerranée ?', 'Sicile', 'Chypre', 'Crète', 'Sardaigne', 'Sicile'),
 (14, 'Quelle est la plus grande ville d\'Australie ?', 'Sydney', 'Sydney', 'Melbourne', 'Perth', 'Brisbane'),
 (15, 'Quel pays est situé à la pointe sud de l\'Afrique ?', 'Afrique du Sud', 'Zimbabwe', 'Namibie', 'Botswana', 'Afrique du Sud'),
 (16, 'Quelle est la plus grande île de l\'archipel japonais ?', 'Honshu', 'Shikoku', 'Kyushu', 'Honshu', 'Hokkaido'),
@@ -101,7 +100,29 @@ INSERT INTO `questions` (`id`, `question`, `answer`, `option_one`, `option_two`,
 (59, 'Quel pays est situé au sud de l\'Inde ?', 'Sri Lanka', 'Maldives', 'Bangladesh', 'Népal', 'Sri Lanka'),
 (60, 'Quel désert s\'étend à travers le sud-ouest des États-Unis ?', 'Le désert de Sonora', 'Le désert de Mojave', 'Le désert de Gobi', 'Le désert d\'Atacama', 'Le désert de Sonora'),
 (61, 'Quelle est la capitale du Brésil ?', 'Brasília', 'Brasília', 'São Paulo', 'Belo Horizonte', 'Rio de Janeiro'),
-(62, 'Dans quel pays se trouve le mont Elbrouz, la plus haute montagne d\'Europe ?', 'Russie', 'France', 'Russie', 'Italie', 'Suisse');
+(62, 'Dans quel pays se trouve le mont Elbrouz, la plus haute montagne d\'Europe ?', 'Russie', 'France', 'Russie', 'Italie', 'Suisse'),
+(63, 'Quelle est la capitale du Chili ?', 'Santiago', 'Buenos Aires', 'Santiago', 'La Paz', 'Lima'),
+(64, 'Quelle chaîne de montagnes sépare l\'Europe de l\'Asie ?', 'Les montagnes de l\'Oural', 'Les montagnes des Pyrénées', 'Les montagnes des Carpates', 'Les montagnes des Alpes', 'Les montagnes de l\'Oural'),
+(65, 'Dans quel océan se trouve l\'île de Madagascar ?', 'Océan Indien', 'Océan Indien', 'Océan Pacifique', 'Océan Arctique', 'Océan Atlantique'),
+(66, 'Quel est le plus haut sommet d\'Asie ?', 'Mont Everest', 'Mont K2', 'Mont Everest', 'Mont Lhotse', 'Mont Kanchenjunga'),
+(67, 'Quel est le désert le plus sec du monde ?', 'Le désert d\'Atacama', 'Le désert d\'Atacama', 'Le désert de Gobi', 'Le désert de Sonora', 'Le Sahara'),
+(68, 'Quelle est la capitale de l\'Inde ?', 'New Delhi', 'Mumbai', 'Kolkata', 'New Delhi', 'Chennai'),
+(69, 'Dans quel pays se trouve le lac Titicaca, le plus haut lac navigable du monde ?', 'Pérou', 'Bolivie', 'Pérou', 'Argentine', 'Chili'),
+(70, 'Quel océan borde la côte est des États-Unis ?', 'Océan Atlantique', 'Océan Pacifique', 'Océan Indien', 'Océan Arctique', 'Océan Atlantique'),
+(71, 'Quel pays est situé au nord de la Mongolie ?', 'Russie', 'Suède', 'Russie', 'Finlande', 'Danemark'),
+(72, 'Quelle est la capitale de la Turquie ?', 'Ankara', 'Ankara', 'Izmir', 'Antalya', 'Istanbul'),
+(73, 'Quelle est la plus grande île de l\'archipel indonésien ?', 'Bornéo', 'Sumatra', 'Bornéo', 'Sulawesi', 'Java'),
+(74, 'Quel pays d\'Amérique du Sud partage sa frontière avec le plus grand nombre de pays ?', 'Brésil', 'Brésil', 'Colombie', 'Pérou', 'Argentine'),
+(75, 'Quel est le plus haut sommet d\'Afrique ?', 'Mont Kilimandjaro', 'Mont Kenya', 'Mont Ruwenzori', 'Mont Simien', 'Mont Kilimandjaro'),
+(76, 'Dans quel pays se trouve la ville de Pékin ?', 'Chine', 'Japon', 'Corée du Sud', 'Chine', 'Vietnam'),
+(77, 'Quel est le plus grand désert d\'Asie ?', 'Le désert de Gobi', 'Le désert de Thar', 'Le désert de Gobi', 'Le désert d\'Arabie', 'Le désert du Kyzylkoum'),
+(78, 'Quel pays est situé au sud de l\'Égypte ?', 'Soudan', 'Libye', 'Arabie saoudite', 'Israël', 'Soudan'),
+(79, 'Dans quel pays se trouve la ville de Sydney ?', 'Australie', 'Nouvelle-Zélande', 'Fidji', 'Australie', 'Papouasie-Nouvelle-Guinée'),
+(80, 'Quel est le plus grand lac du monde en termes de superficie ?', 'Mer Caspienne', 'Mer Caspienne', 'Lac Victoria', 'Lac Baïkal', 'Lac Supérieur'),
+(81, 'Quel est le pays le plus petit d\'Amérique centrale ?', 'El Salvador', 'Honduras', 'Costa Rica', 'El Salvador', 'Nicaragua'),
+(82, 'Quel pays est situé en Europe de l\'Est et est bordé par la mer Noire ?', 'Ukraine', 'Roumanie', 'Turquie', 'Grèce', 'Ukraine'),
+(83, 'Quelle chaîne de montagnes traverse la frontière entre l\'Espagne et la France ?', 'Les Pyrénées', 'Les Alpes', 'Les Carpates', 'Les Apennins', 'Les Pyrénées'),
+(84, 'Quel est le plus grand pays d\'Asie de l\'Ouest ?', 'Kazakhstan', 'Kazakhstan', 'Ouzbékistan', 'Tadjikistan', 'Turkménistan');
 
 -- --------------------------------------------------------
 
@@ -149,13 +170,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `questions`
 --
 ALTER TABLE `questions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
