@@ -225,6 +225,7 @@ input {
 }
 
 #topnav p {
+  background-image: url('../img/score-bg.png');
   position: absolute;
   left: 50%;
   transform: translateX(-50%); 
@@ -274,8 +275,8 @@ input {
 #countdown {
   position: relative;
   margin: auto;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   height: 40px;
   width: 40px;
   text-align: center;
@@ -307,6 +308,19 @@ input {
 
 .animate-circle {
   animation: countdown 10s linear forwards;
+}
+
+#options-container {
+  display: flex;
+  flex-direction: column;
+}
+
+#options-container .rollover{
+  margin-bottom: 17px;
+}
+
+#options-container .rollover .btn{
+  margin-top: unset;
 }
 
 @keyframes countdown {
