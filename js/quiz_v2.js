@@ -26,15 +26,19 @@ let lastQuestion = null;
 let answeredQuestions = [];
 let response = 0;
 let time = 10;
-let questionNumber = document.querySelector("#question-number");
-let enunciate = document.querySelector("#question");
-let optionOneBtn = document.querySelector("#option_one button");
-let optionTwoBtn = document.querySelector("#option_two button");
-let optionThreeBtn = document.querySelector("#option_three button");
-let optionFourBtn = document.querySelector("#option_four button");
-let selectTimer = document.querySelector("#timer");
-let displayUserScore = document.querySelector("#user-score");
-let timerCircle = document.querySelector("circle")
+const questionNumber = document.querySelector("#question-number");
+const enunciate = document.querySelector("#question");
+const optionOneBtn = document.querySelector("#option_one button");
+const optionTwoBtn = document.querySelector("#option_two button");
+const optionThreeBtn = document.querySelector("#option_three button");
+const optionFourBtn = document.querySelector("#option_four button");
+const optionOneContainer = document.querySelector("#option_one");
+const optionTwoContainer = document.querySelector("#option_two");
+const optionThreeContainer = document.querySelector("#option_three");
+const optionFourContainer = document.querySelector("#option_four");
+const selectTimer = document.querySelector("#timer");
+const displayUserScore = document.querySelector("#user-score");
+const timerCircle = document.querySelector("circle")
 
 
 
@@ -123,22 +127,9 @@ function nextQuestion() {
     } else if (!answeredQuestions.includes(getRandomQuestion)) {
         questionNumber.innerHTML = `(${q} of 30)`;
         enunciate.innerHTML = questions[getRandomQuestion].question;
-        optionOneBtn.innerHTML = questions[getRandomQuestion].option_one;
-        optionOneBtn.disabled = false;
-        optionOneBtn.classList.remove('true-button');
-        optionOneBtn.classList.remove('false-button');
-        optionTwoBtn.innerHTML = questions[getRandomQuestion].option_two;
-        optionTwoBtn.disabled = false;
-        optionTwoBtn.classList.remove('true-button');
-        optionTwoBtn.classList.remove('false-button');
-        optionThreeBtn.innerHTML = questions[getRandomQuestion].option_three;
-        optionThreeBtn.disabled = false;
-        optionThreeBtn.classList.remove('true-button');
-        optionThreeBtn.classList.remove('false-button');
-        optionFourBtn.innerHTML = questions[getRandomQuestion].option_four;
-        optionFourBtn.disabled = false;
-        optionFourBtn.classList.remove('true-button');
-        optionFourBtn.classList.remove('false-button');
+
+        resetButtons(getRandomQuestion)
+
         answeredQuestions.push(getRandomQuestion);
         lastQuestion = getRandomQuestion;
         time = 10;
@@ -153,7 +144,30 @@ function nextQuestion() {
     }
 }
 
-
+function resetButtons(getRandomQuestion) {
+    let order = [1, 2, 3, 4];
+    order.sort(() => Math.random()- 0.5);
+    optionOneContainer.style.order = order[0];
+    optionTwoContainer.style.order = order[1];
+    optionThreeContainer.style.order = order[2];
+    optionFourContainer.style.order = order[3];
+    optionOneBtn.innerHTML = questions[getRandomQuestion].option_one;
+    optionOneBtn.disabled = false;
+    optionOneBtn.classList.remove('true-button');
+    optionOneBtn.classList.remove('false-button');
+    optionTwoBtn.innerHTML = questions[getRandomQuestion].option_two;
+    optionTwoBtn.disabled = false;
+    optionTwoBtn.classList.remove('true-button');
+    optionTwoBtn.classList.remove('false-button');
+    optionThreeBtn.innerHTML = questions[getRandomQuestion].option_three;
+    optionThreeBtn.disabled = false;
+    optionThreeBtn.classList.remove('true-button');
+    optionThreeBtn.classList.remove('false-button');
+    optionFourBtn.innerHTML = questions[getRandomQuestion].option_four;
+    optionFourBtn.disabled = false;
+    optionFourBtn.classList.remove('true-button');
+    optionFourBtn.classList.remove('false-button');
+}
 
 getQuestions()
     .then((questions) => {
