@@ -177,7 +177,7 @@ input {
 
 @media (max-width: 768px) {
 
-  #welcome-msg{
+  #welcome-msg {
     width: 100%;
     padding-bottom: 50px;
   }
@@ -226,9 +226,19 @@ input {
 
 #topnav p {
   background-image: url('../img/score-bg.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: unset;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: white;
+  height: 60px;
+  width: 150px;
+  text-shadow: 3px 3px 5px #333333;
   position: absolute;
   left: 50%;
-  transform: translateX(-50%); 
+  transform: translateX(-50%);
 }
 
 /* FIN CSS pour la navbar */
@@ -266,7 +276,7 @@ input {
 
 }
 
-.timer-container{
+.timer-container {
   margin: auto;
   margin-top: 15px;
   margin-bottom: 15px;
@@ -315,11 +325,11 @@ input {
   flex-direction: column;
 }
 
-#options-container .rollover{
+#options-container .rollover {
   margin-bottom: 17px;
 }
 
-#options-container .rollover .btn{
+#options-container .rollover .btn {
   margin-top: unset;
 }
 
@@ -327,7 +337,24 @@ input {
   from {
     stroke-dashoffset: 0px;
   }
+
   to {
     stroke-dashoffset: 113px;
   }
+}
+
+@media (max-height: 714px) {
+
+  #topnav p {
+    display: none;
+  }
+  
+}
+
+@media (max-width: 373px) {
+
+  #topnav p {
+    display: none;
+  }
+
 }

@@ -99,7 +99,7 @@ function verifyAnswer(answered = 0) {
             selectAnswer.innerHTML = `<img src="img/false_lt.png" alt="Mauvaise réponse"> ${questions[lastQuestion][answered]}`;
         } else {
             score += 1 + time;
-            displayUserScore.innerHTML = `${score} points`
+            displayUserScore.innerHTML = `${score}&nbsp;points`
         }
     }
 
