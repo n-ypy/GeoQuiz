@@ -97,7 +97,7 @@ getQuestions()
 
                 if (compareAnswer) {
                     score++;
-                    displayUserScore.innerHTML = `${score} points`;
+                    displayUserScore.innerHTML = `${score}&nbsp;points`;
                 }
 
                 if (

@@ -19,7 +19,7 @@ if (!isset($_SESSION['id'])) {
 <body>
     <nav id="topnav">
         <input type="button" value="< Retour" onclick="history.back()">
-        <p><?= $_SESSION['username'] ?> : <span id="user-score">0 points</span></p>
+        <p><?= $_SESSION['username'] ?></br><span id="user-score">0&nbsp;points</span></p>
         <input type="button" value="Déconnexion" onclick="location.href='actions/disconnect.php'">
     </nav>
     <div class="container mt-5">
@@ -41,20 +41,19 @@ if (!isset($_SESSION['id'])) {
                             <circle class="animate-circle" r="18" cx="20" cy="20"></circle>
                         </svg>
                     </div>
-                    <div class="rollover" id="option_one"> <!--attention à id="option_one"-->
-                        <button class="btn" onclick="verifyAnswer('option_one')"></button>
-                    </div>
-                    <br>
-                    <div class="rollover" id="option_two"> <!--attention à id="option-two"-->
-                        <button class="btn" onclick="verifyAnswer('option_two')"></button>
-                    </div>
-                    <br>
-                    <div class="rollover" id="option_three"> <!--attention à id="option-three"-->
-                        <button class="btn" onclick="verifyAnswer('option_three')"></button>
-                    </div>
-                    <br>
-                    <div class="rollover" id="option_four"> <!--attention à id="option-four"-->
-                        <button class="btn" onclick="verifyAnswer('option_four')"></button>
+                    <div id="options-container">
+                        <div class="rollover" id="option_one"> <!--attention à id="option_one"-->
+                            <button class="btn" onclick="verifyAnswer('option_one')"></button>
+                        </div>
+                        <div class="rollover" id="option_two"> <!--attention à id="option-two"-->
+                            <button class="btn" onclick="verifyAnswer('option_two')"></button>
+                        </div>
+                        <div class="rollover" id="option_three"> <!--attention à id="option-three"-->
+                            <button class="btn" onclick="verifyAnswer('option_three')"></button>
+                        </div>
+                        <div class="rollover" id="option_four"> <!--attention à id="option-four"-->
+                            <button class="btn" onclick="verifyAnswer('option_four')"></button>
+                        </div>
                     </div>
                 </div>
             </div>
