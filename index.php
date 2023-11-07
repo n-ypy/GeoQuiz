@@ -27,8 +27,8 @@ if (isset($_SESSION['lastErrMsg'])) {
             <h1 id="welcome-msg">Bienvenue sur <b>GéoQuiz,</b> {$_SESSION['username']}&nbsp;!</h1>
             <div id="btn-list-index">
                 <div id="row">
-                    <button type="submit" class="btn" onclick="window.location.href='quiz_v2.php';">Nouveau Quiz</button>
-                    <button type="submit" class="btn" onclick="window.location.href='quiz.php';">Ancien Quiz</button>
+                    <button type="submit" class="btn" onclick="window.location.href='quiz_v2.php';">Quiz</button>
+                    <button type="submit" class="btn" onclick="window.location.href='quiz.php';">Ancienne version</button>
                     <button type="submit" class="btn" onclick="window.location.href='leaderboard.php';">Classement</button>
                 </div>
             </div>
