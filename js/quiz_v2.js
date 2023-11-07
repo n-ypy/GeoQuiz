@@ -97,6 +97,8 @@ function verifyAnswer(answered = 0) {
         let verifyAnswer = questions[lastQuestion][answered] === questions[lastQuestion]['answer'];
         if (!verifyAnswer) {
             selectAnswer.innerHTML = `<img src="img/false_lt.png" alt="Mauvaise réponse"> ${questions[lastQuestion][answered]}`;
+            selectAnswer.classList.add('false-button');
+            console.log(selectAnswer)
         } else {
             score += 1 + time;
             displayUserScore.innerHTML = `${score}&nbsp;points`
