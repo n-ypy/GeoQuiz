@@ -4,7 +4,7 @@ GeoQuiz is a student project made by [@ebusy9](https://github.com/ebusy9) and [@
 The project's goal was to create a quiz game using native JavaScript and PHP.
 </br>
 </br>
-Link to the project website : http://evgenii-geoquiz.projets.garage404.com/
+You can access the project website by following this link: [GeoQuiz](http://evgenii-geoquiz.projets.garage404.com/)
 </br>
 ## Project requirements
 This project had to meet the following requirements.
