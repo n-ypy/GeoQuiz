@@ -1,4 +1,4 @@
-# Wellcome to GéoQuiz 🌎
+# Welcome to GéoQuiz 🌎
 GeoQuiz is a student project made by [@ebusy9](https://github.com/ebusy9) and [@Akadid](https://github.com/Akadid).
 </br>
 The project's goal was to create a quiz game using native JavaScript and PHP.
