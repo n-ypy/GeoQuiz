@@ -1,5 +1,5 @@
 # Welcome to GéoQuiz 🌎
-GeoQuiz is a student project made by [@ebusy9](https://github.com/enypy) and [@Akadid](https://github.com/Akadid).
+GeoQuiz is a student project made by [@enypy](https://github.com/enypy) and [@Akadid](https://github.com/Akadid).
 </br>
 The project's goal was to create a quiz game using native JavaScript and PHP.
 </br>
