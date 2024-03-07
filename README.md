@@ -4,7 +4,7 @@ GeoQuiz is a student project made by [@enypy](https://github.com/enypy) and [@Ak
 The project's goal was to create a quiz game using native JavaScript and PHP.
 </br>
 </br>
-You can access the project website by following this link: [GeoQuiz](http://evgenii-geoquiz.projets.garage404.com/)
+You can access the project website by following this link: [GeoQuiz](https://geoquiz.evgenii.fr/)
 </br>
 ## Project requirements
 This project had to meet the following requirements.
@@ -30,14 +30,14 @@ This project had to meet the following requirements.
 ### Login
 To log in, just enter your name and click on "Play!" Afterward, click on "Quiz". If you'd like to explore the older version, simply click on "Old version".
 </br>
-![geoquiz-login](https://i.imgur.com/xMMjL9T.png)
+![geoquiz-login](https://raw.githubusercontent.com/enypy/ReadMeAssetsVault/main/GeoQuiz/home_page.png)
 
 ### The game
 You need to respond to 30 questions, and for each correct answer, you'll earn some points. The quicker you respond, the higher your point total will be.
 </br>
 You can keep track of your overall score, which is displayed at the top of the screen.
 </br>
-![geoquiz-thegame](https://i.imgur.com/qYMpa3f.png)
+![geoquiz-thegame](https://raw.githubusercontent.com/enypy/ReadMeAssetsVault/main/GeoQuiz/quiz_v1_page.png)
 
 
 ### Leaderboard
@@ -45,11 +45,11 @@ Once you've completed your latest game, your score will be displayed on the lead
 </br>
 The leaderboard also features the top 4 users, ranked according to their scores.
 </br>
-![geoquiz-leaderboard](https://i.imgur.com/UgAZUiL.png)
+![geoquiz-leaderboard](https://raw.githubusercontent.com/enypy/ReadMeAssetsVault/main/GeoQuiz/score_page.png)
 
   
 ## New version
-![geoquiz-new-version-preview](https://i.imgur.com/wolqcXK.gif)
+![geoquiz-new-version-preview](https://raw.githubusercontent.com/enypy/ReadMeAssetsVault/main/GeoQuiz/gameplay.gif)
 </br>
 In the first version, we used `<input type="radio">`, requiring users to click three times to answer a question and move to the next one.
 </br>
