@@ -1,4 +1,6 @@
 <?php
+    echo "what is going on";
+    die();
 $dbHostname = getenv("MYSQL_HOSTNAME");
 $dbName = getenv("MYSQL_DB_NAME");
 $dbUsername = getenv("MYSQL_USERNAME");
