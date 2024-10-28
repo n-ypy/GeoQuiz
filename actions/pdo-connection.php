@@ -10,8 +10,6 @@ try {
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
     ]);
 } catch (PDOException $exception) {
-    echo $exception->getMessage();
-    die();
     $_SESSION['lastErrMsg'] = $exception->getMessage();
     header('Location: ../index.php?err=PDOconnection');
     exit();
