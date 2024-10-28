@@ -1,7 +1,19 @@
 {
-    "functions": {
-        "api/*.php": {
-            "runtime": "vercel-php@0.7.3"
-        }
-    }
-}
+    "version": 2,
+    "builds": [
+      { "src": "*.php", "use": "@vercel/php" },
+      { "src": "css/*.css", "use": "@vercel/static" },
+      { "src": "js/*.js", "use": "@vercel/static" },
+      { "src": "img/*", "use": "@vercel/static" }
+    ],
+    "routes": [
+      { "src": "/actions/(.*)", "dest": "/actions/$1" },
+      { "src": "/css/(.*)", "dest": "/css/$1" },
+      { "src": "/js/(.*)", "dest": "/js/$1" },
+      { "src": "/img/(.*)", "dest": "/img/$1" },
+      { "src": "/leaderboard.php", "dest": "/leaderboard.php" },
+      { "src": "/quiz.php", "dest": "/quiz.php" },
+      { "src": "/quiz_v2.php", "dest": "/quiz_v2.php" },
+      { "src": "/", "dest": "/index.php" }
+    ]
+  }  
