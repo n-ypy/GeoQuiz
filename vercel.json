@@ -1,19 +1,56 @@
 {
-    "version": 2,
-    "builds": [
-      { "src": "*.php", "use": "@vercel/php" },
-      { "src": "css/*.css", "use": "@vercel/static" },
-      { "src": "js/*.js", "use": "@vercel/static" },
-      { "src": "img/*", "use": "@vercel/static" }
-    ],
+    "functions": {
+      "api/*.php": {
+        "runtime": "vercel-php@0.7.3"
+      },
+      "api/**/*.php": {
+        "runtime": "vercel-php@0.7.3"
+      }
+    },
     "routes": [
-      { "src": "/actions/(.*)", "dest": "/actions/$1" },
-      { "src": "/css/(.*)", "dest": "/css/$1" },
-      { "src": "/js/(.*)", "dest": "/js/$1" },
-      { "src": "/img/(.*)", "dest": "/img/$1" },
-      { "src": "/leaderboard.php", "dest": "/leaderboard.php" },
-      { "src": "/quiz.php", "dest": "/quiz.php" },
-      { "src": "/quiz_v2.php", "dest": "/quiz_v2.php" },
-      { "src": "/", "dest": "/index.php" }
+      { "src": "/index.php", "dest": "/api/index.php" },
+      { "src": "/index", "dest": "/api/index.php" },
+      { "src": "/", "dest": "/api/index.php" },
+  
+      { "src": "/actions/disconnect", "dest": "/api/actions/disconnect.php" },
+      { "src": "/actions/disconnect.php", "dest": "/api/actions/disconnect.php" },
+
+      { "src": "/actions/get-bestscore", "dest": "/api/actions/get-bestscore.php" },
+      { "src": "/actions/get-bestscore.php", "dest": "/api/actions/get-bestscore.php" },
+
+      { "src": "/actions/get-questions", "dest": "/api/actions/get-questions.php" },
+      { "src": "/actions/get-questions.php", "dest": "/api/actions/get-questions.php" },
+
+      { "src": "/actions/login", "dest": "/api/actions/login.php" },
+      { "src": "/actions/login.php", "dest": "/api/actions/login.php" },
+
+      { "src": "/actions/pdo-connection", "dest": "/api/actions/pdo-connection.php" },
+      { "src": "/actions/pdo-connection.php", "dest": "/api/actions/pdo-connection.php" },
+
+      { "src": "/actions/submit-score", "dest": "/api/actions/submit-score.php" },
+      { "src": "/actions/submit-score.php", "dest": "/api/actions/submit-score.php" },
+
+      { "src": "/leaderboard", "dest": "/api/leaderboard.php" },
+      { "src": "/leaderboard.php", "dest": "/api/leaderboard.php" },
+
+      { "src": "/quiz", "dest": "/api/quiz.php" },
+      { "src": "/quiz.php", "dest": "/api/quiz.php" },
+
+      { "src": "/quiz_v2", "dest": "/api/quiz_v2.php" },
+      { "src": "/quiz_v2.php", "dest": "/api/quiz_v2.php" },
+  
+      { "src": "/api/css/style.css", "dest":"/css/style.css" },
+      { "src": "/api/img/false_lt.png", "dest": "/img/false_lt.png" },
+      { "src": "/api/img/false.png", "dest": "/img/false.png" },
+      { "src": "/api/img/globe.png", "dest": "/img/globe.png" },
+      { "src": "/api/img/image.jpg", "dest": "/img/image.jpg" },
+      { "src": "/api/img/score-bg.png", "dest": "/img/score-bg.png" },
+      { "src": "/api/img/timer.png", "dest": "/img/timer.png" },
+      { "src": "/api/img/true_lt.png", "dest": "/img/true_lt.png" },
+      { "src": "/api/img/true.png", "dest": "/img/true.png" },
+      { "src": "/api/js/index.js", "dest": "/js/index.js" },
+      { "src": "/api/js/quiz.js", "dest": "/js/quiz.js" },
+      { "src": "/api/js/quiz_v2.js", "dest": "/js/quiz_v2.js" }
     ]
-  }  
+  }
+  
