@@ -1,4 +1,6 @@
 <?php
+    echo "huh";
+    die();
 try{
 $pdoQuizz = new PDO("mysql:host=127.0.0.1;dbname=geoquiz", "root", "", [
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
