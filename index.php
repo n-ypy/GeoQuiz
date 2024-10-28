@@ -17,6 +17,20 @@ if (isset($_SESSION['lastErrMsg'])) {
 </head>
 
 <body>
+    <?php
+    echo $_SESSION['lastErrMsg'] . PHP_EOL;
+    $envVars = [
+        getenv("MYSQL_HOSTNAME"),
+        getenv("MYSQL_DB_NAME"),
+        getenv("MYSQL_USERNAME"),
+        getenv("MYSQL_PWD"),
+    ];
+
+    foreach ($envVars as $v) {
+        echo $v . PHP_EOL;
+    }
+    ?>
+
     <div class="container" id="index-container">
         <?php
         if (isset($_SESSION['id'])) {
